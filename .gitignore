@@ -12,3 +12,7 @@ dist
 /.classpath
 /.project
 /RUNNING_PID
+
+/.DS_Store
+/.settings/
+/conf/evolutions/
