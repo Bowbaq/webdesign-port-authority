@@ -2,14 +2,11 @@
 
 @menubar(active: String) = {
     <ul class="nav">
-        <li class="@if(active == "favorites"){ active }">
-            <a href="@controllers.routes.Transit.favorites()">Favorites</a>
-        </li>
         <li class="@if(active == "routes"){ active }">
-            <a href="@controllers.routes.Transit.routes()">Routes</a>
+            <a href="#">Routes</a>
         </li>
         <li class="@if(active == "nearby"){ active }">
-            <a href="@controllers.routes.Transit.preNearby()">Locate</a>
+            <a href="#">Locate</a>
         </li>
     </ul>
 }
@@ -50,27 +47,14 @@
         @if(navbar.body != "") {
             <div class="navbar navbar-inverse navbar-static-top">
                 <div class="navbar-inner">
-                    @navbar
+                    @menubar(active)
                 </div>
             </div>
         }
-        <div class="container-fluid title-bar">
-            <h1>@title</h1>
-        </div>
         
-        <div class="main-container">
+        <div class="container">
             @content
         </div>
-        
-        @if(active != "") {
-            <div class="navbar navbar-inverse navbar-fixed-bottom">
-                <div class="navbar-inner">
-                    <div class="container-fluid">
-                        @menubar(active)
-                    </div>
-                </div>
-            </div>
-        }
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="@routes.Assets.at("javascripts/vendor/jquery.js")"><\/script>')</script>
