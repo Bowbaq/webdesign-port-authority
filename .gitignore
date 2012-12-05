@@ -17,3 +17,4 @@ dist
 /.settings/
 /conf/evolutions/
 /.settings
+/data/data.sql
