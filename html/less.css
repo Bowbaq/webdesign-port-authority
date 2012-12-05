@@ -75,7 +75,7 @@ a{
 	padding-right: 60px;
 }
 .navItem{
-	color: #68B0B6;
+	color: #00CED1;
 	display:inline-block;
 	font-size:18px;
 	padding-left: 60px;
@@ -98,7 +98,7 @@ a{
 .navItem:hover .navImg{
 	text-decoration:none;
 	background:#333;
-	border: 2px solid #68B0B6;
+	border: 2px solid #00CED1;
 
 }
 .navItem .navImg img{
@@ -110,7 +110,7 @@ a{
 	background-color: #EFEFED;
 }
 h1, h2, h3, h4, h5, h6{
-	color: #68B0B6;
+	color: #00CED1;
 }
 
 @media screen and (min-width: 768px) and (max-width:960px){
