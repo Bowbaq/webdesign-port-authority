@@ -8,7 +8,7 @@ import models.gtfs.Trip;
 
 import java.util.Map;
 
-public class TripAdapter implements CSVEntryParser<Trip> {
+public class TripAdapter extends BaseAdapter implements CSVEntryParser<Trip> {
 
     private Map<String, Route> routes;
     private Map<String, Calendar> services;
@@ -18,12 +18,12 @@ public class TripAdapter implements CSVEntryParser<Trip> {
     public Trip parseEntry(String... data) {
         Trip trip = new Trip();
 
-        trip.id = data[2];
-        trip.route = routes.get(data[0]);
-        trip.service = services.get(data[1]);
-        trip.headsign = data[3];
-        trip.direction = data[4];
-        trip.shape = shapes.get(data[6]);
+        trip.id = data[mapping.get("trip_id")];
+        trip.route = routes.get(data[mapping.get("route_id")]);
+        trip.service = services.get(data[mapping.get("service_id")]);
+        trip.headsign = data[mapping.get("trip_headsign")];
+        trip.direction = data[mapping.get("direction_id")].equals("1") ? Trip.INBOUND : Trip.OUTBOUND;
+        trip.shape = shapes.get(data[mapping.get("shape_id")]);
 
         return trip;
     }

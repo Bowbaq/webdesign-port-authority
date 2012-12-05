@@ -9,6 +9,9 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Trip extends Model {
+    
+    public static final int OUTBOUND = 0;
+    public static final int INBOUND = 1;
 
     @Id
     @Constraints.Required
@@ -31,8 +34,7 @@ public class Trip extends Model {
     public String headsign;
 
     @Constraints.Required
-    @Constraints.MaxLength(2)
-    public String direction;
+    public Integer direction;
 
     public static Finder<String,Trip> find = new Finder<String, Trip>(
             String.class, Trip.class

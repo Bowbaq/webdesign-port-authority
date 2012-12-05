@@ -7,13 +7,13 @@ import models.gtfs.ShapeFragment;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ShapeAdapter implements CSVEntryParser<Shape> {
+public class ShapeAdapter extends BaseAdapter implements CSVEntryParser<Shape> {
 
     private static Map<String, Shape> shapes = new HashMap<String, Shape>();
 
     @Override
     public Shape parseEntry(String... data) {
-        String id = data[0];
+        String id = data[mapping.get("shape_id")];
         Shape s;
         if(!shapes.containsKey(id)) {
             s = new Shape();
@@ -24,9 +24,9 @@ public class ShapeAdapter implements CSVEntryParser<Shape> {
         }
 
         ShapeFragment f = new ShapeFragment();
-        f.lat = Double.parseDouble(data[1]);
-        f.lng = Double.parseDouble(data[2]);
-        f.seq = Long.parseLong(data[3]);
+        f.lat = Double.parseDouble(data[mapping.get("shape_pt_lat")]);
+        f.lng = Double.parseDouble(data[mapping.get("shape_pt_lon")]);
+        f.seq = Long.parseLong(data[mapping.get("shape_pt_sequence")]);
         f.shape = s;
         s.fragments.add(f);
 

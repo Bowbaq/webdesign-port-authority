@@ -1,0 +1,25 @@
+@import util.DoubleW;
+
+@navbar = {
+}
+
+@main("Locate", navbar, "nearby") {
+<div class="container-fluid route-page">
+    <div class="well">
+        <form id="search">
+            <div class="control-group">
+                <label class="control-label" for="address">Address</label>
+                <div class="controls">
+                    <textarea id="address" name="address" placeholder="Address"></textarea>
+                </div>
+            </div>
+            <button id="search-button" name="submit" class="btn btn-primary">Search</button>
+        </form>
+        <p>or</p>
+        <button id="locate" class="btn">Locate me</button>
+    </div>
+    <script type="text/javascript">
+        window._page = "locate";
+    </script>
+</div>
+}

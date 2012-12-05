@@ -1,0 +1,35 @@
+@(route: models.gtfs.Route)
+
+@import models.gtfs.Trip;
+
+@navbar = {
+    <a class="brand" href="#">
+        @route.short_name
+        @if(route.long_name.length() > 28) { 
+            @route.long_name.substring(0, 25).trim()... 
+        } else { 
+            @route.long_name 
+        }
+    </a>
+}
+
+@main("Direction", navbar, "none") {
+<div class="container-fluid direction-page">
+    <div class="well">
+        @if(route.directions().inbound()) {
+        <div class="row-fluid">
+            <a class="btn span12" href="@controllers.routes.Transit.stops(route.id, Trip.INBOUND)">
+                <i class="icon-circle-arrow-right"></i> Inbound
+            </a>
+        </div>
+        }
+        @if(route.directions().outbound()) {
+        <div class="row-fluid">
+            <a class="btn span12" href="@controllers.routes.Transit.stops(route.id, Trip.OUTBOUND)">
+                <i class="icon-circle-arrow-left"></i> Outbound
+            </a>
+        </div>
+        }
+    </div>
+</div>
+}

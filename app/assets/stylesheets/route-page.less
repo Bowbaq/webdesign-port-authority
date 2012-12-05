@@ -1,0 +1,60 @@
+.route-page {
+    .route-item {
+        .route-badge {
+            position: relative;
+            
+            .square(5em);
+            
+            .border-radius(3px);
+             
+            background: rgba(255, 255, 255, 0.3);
+             
+            .route-short-name {
+                 display: block;
+
+                 position: absolute;
+                 top: 50%;
+                 left: 0;
+                 right: 0;
+
+                 margin-top: -0.4em;
+
+                 font-size: 150%;
+                 font-weight: bold;
+                 text-align: center;
+             }
+        }
+        
+        .route-long-name {
+            position: relative;
+            height: 5em;
+            .box-sizing(border-box);
+            
+            margin: 0 1em 0 5em;
+            padding-left: 1em;
+            
+            span {
+                position: absolute;
+                top: 50%;
+                margin-top: -0.4em;
+                
+                font-size: 150%;
+                font-weight: bold;
+            }
+        }
+        
+        .list-icon {
+            .size(5em, 1em);
+            
+            position: absolute;
+            top: 0;
+            right: 0;
+            
+            i {
+                position: absolute;
+                top: 50%;
+                margin-top: -0.3em;
+            }
+        }
+    }
+}

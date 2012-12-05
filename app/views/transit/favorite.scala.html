@@ -1,0 +1,31 @@
+@(favorites: List[models.Favorite])
+
+@navbar = {
+    
+}
+ 
+@main("Favorites", navbar, "favorites") {
+
+<div class="container-fluid favorite-page">
+    <ul>
+        @for(favorite <- favorites) {
+        <li class="favorite-item">
+            <a href="@controllers.routes.Transit.schedule(favorite.route.id, favorite.stop.id, favorite.direction)" class="clearfix">
+                <div class="favorite-badge pull-left">
+                    <span class="favorite-short-name">@favorite.route.short_name</span>
+                </div>
+
+                <div class="favorite-long-name"><span>@favorite.stop.name</span></div>
+                <div class="favorite-upcoming-time pull-right">
+                    @if(favorite.next() == null) {
+                    No upcoming bus!
+                    } else {
+                    @favorite.next().remaining()
+                    }
+                </div>
+            </a>
+        </li>
+        }
+    </ul>
+</div>
+}

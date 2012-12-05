@@ -3,18 +3,17 @@ package models.gtfs.csv;
 import com.googlecode.jcsv.reader.CSVEntryParser;
 import models.gtfs.Agency;
 
-public class AgencyAdapter implements CSVEntryParser<Agency> {
-
+public class AgencyAdapter extends BaseAdapter implements CSVEntryParser<Agency> {
     @Override
     public Agency parseEntry(String... data) {
         Agency agency = new Agency();
 
-        agency.id = data[0];
-        agency.name = data[1];
-        agency.url = data[2];
-        agency.timezone = data[3];
-        agency.lang = data[4];
-        agency.phone = data[5];
+        agency.id = data[mapping.get("agency_id")];
+        agency.name = data[mapping.get("agency_name")];
+        agency.url = data[mapping.get("agency_url")];
+        agency.timezone = data[mapping.get("agency_timezone")];
+        agency.lang = data[mapping.get("agency_lang")];
+        agency.phone = data[mapping.get("agency_phone")];
 
         return agency;
     }

@@ -1,0 +1,65 @@
+.favorite-page {
+    h1.title {
+        color: rgba(255, 255, 255, 0.9);
+    }
+    .favorite-item {
+        .favorite-badge {
+            position: relative;
+            
+            .square(5em);
+            
+            .border-radius(3px);
+             
+            background: rgba(255, 255, 255, 0.3);
+             
+            .favorite-short-name {
+                 display: block;
+
+                 position: absolute;
+                 top: 50%;
+                 left: 0;
+                 right: 0;
+
+                 margin-top: -0.4em;
+
+                 font-size: 150%;
+                 font-weight: bold;
+                 text-align: center;
+             }
+        }
+
+        .favorite-upcoming-time {
+            position: relative;
+            padding-left: 1em;
+            font-weight: bold;
+            top: 50%;
+            margin-top: -3em;
+            font-size: 120%;
+        }
+
+        .favorite-long-name{
+            position: relative;
+            height: 5em;
+            .box-sizing(border-box);
+
+            margin: 0 1em 0 5em;
+            padding-left: 1em;
+
+            span {
+                position: absolute;
+                top: 50%;
+                margin-top: -2em;
+
+                font-size: 100%;
+            }
+        }
+        
+        .time {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin-top: -0.3em;
+
+        }
+    }
+}

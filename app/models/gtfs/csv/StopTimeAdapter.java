@@ -9,7 +9,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Map;
 
-public class StopTimeAdapter implements CSVEntryParser<StopTime> {
+public class StopTimeAdapter extends BaseAdapter implements CSVEntryParser<StopTime> {
 
     private Map<String, Stop> stops;
     private Map<String, Trip> trips;
@@ -18,17 +18,17 @@ public class StopTimeAdapter implements CSVEntryParser<StopTime> {
 
     @Override
     public StopTime parseEntry(String... data) {
-        StopTime time = new StopTime();
+            StopTime time = new StopTime();
 
-        time.trip = trips.get(data[0]);
+        time.trip = trips.get(data[mapping.get("trip_id")]);
         try {
-            time.arrival = formatter .parse(data[1]);
-            time.departure = formatter.parse(data[2]);
+            time.arrival = formatter .parse(data[mapping.get("arrival_time")]);
+            time.departure = formatter.parse(data[mapping.get("departure_time")]);
         } catch (ParseException e) {}
-        time.stop = stops.get(data[3]);
-        time.stop_seq = Integer.parseInt(data[4]);
-        time.pickup_type = data[5].equals("1");
-        time.dropoff_type = data[6].equals("1");
+        time.stop = stops.get(data[mapping.get("stop_id")]);
+        time.stop_seq = Integer.parseInt(data[mapping.get("stop_sequence")]);
+        time.pickup_type = data[mapping.get("pickup_type")].equals("1");
+        time.dropoff_type = data[mapping.get("drop_off_type")].equals("1");
 
         return time;
     }
