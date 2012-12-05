@@ -13,5 +13,6 @@ dist
 /.project
 /RUNNING_PID
 
-.DS_Store
+/.DS_Store
 /.settings/
+/conf/evolutions/
