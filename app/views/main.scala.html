@@ -1,28 +1,36 @@
 @(title: String, navbar: Html = Html(""), active: String = "")(content: Html)
 
 @menubar(active: String) = {
-    <ul class="nav">
-		<li class="nav-item">
-		    <a class="nav-img @if(active == "transit"){ active }" href="fares.html">
-		        <img src="@routes.Assets.at("images/bus_icon.png")"/>
+    <ul class="nav clearfix">
+		<li class="nav-item @if(active == "transit"){active}">
+		    <a class="nav-link" href="fares.html">
+		        <div class="rounded">
+		            <img src="@routes.Assets.at("images/bus_icon.png")"/>
+		        </div>
 		        <p>Transit</p>
 		    </a>
 		</li>
-		<li class="nav-item @if(active == "fares"){ active }">
-		    <a class="nav-img" href="fares.html">
-		        <img src="@routes.Assets.at("images/fares_icon.png")"/>
+		<li class="nav-item @if(active == "fares"){active}">
+		    <a class="nav-link" href="fares.html">
+		        <div class="rounded">
+		            <img src="@routes.Assets.at("images/fares_icon.png")"/>
+		        </div>
 		        <p>Fares</p>
 		    </a>
 		</li>
-		<li class="nav-item @if(active == "info"){ active }">
-		    <a class="nav-img" href="fares.html">
-		        <img src="@routes.Assets.at("images/info_icon.png")"/>
+		<li class="nav-item @if(active == "info"){active}">
+		    <a class="nav-link" href="fares.html">
+		        <div class="rounded">
+		          <img src="@routes.Assets.at("images/info_icon.png")"/>
+		        </div>
 		        <p>Information</p>
 		    </a>
 		</li>
-		<li class="nav-item @if(active == "service"){ active }">
-		    <a class="nav-img" href="fares.html">
-		        <img src="@routes.Assets.at("images/service_icon.png")"/>
+		<li class="nav-item @if(active == "service"){active}">
+		    <a class="nav-link" href="fares.html">
+		        <div class="rounded">
+		          <img src="@routes.Assets.at("images/service_icon.png")"/>
+		        </div>
 		        <p>Rider Services</p>
 		    </a>
 		</li>
@@ -46,6 +54,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!-- <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/vendor/bootstrap/bootstrap.min.css")" /> -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/style.css")">
         
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
@@ -57,13 +66,15 @@
         <![endif]-->
 
         <div class="header">
-    			<a href="@controllers.routes.Application.index()">
-    			    <img class="logo-bus" src="@routes.Assets.at("images/bus_transparent.png")" />
-    			    <img class="logo" src="@routes.Assets.at("images/logo.png")" />
-    			</a>
-    			@menubar(active)
+            <a class="logo" href="@controllers.routes.Application.index()">
+			    <img src="@routes.Assets.at("images/logo.png")" />
+			</a>
+            @menubar(active)
         </div>
-        <div class="container">
+        <div class="secondary-nav">
+            @navbar
+        </div>
+        <div class="container clearfix">
             @content
         </div>
         <div class="footer">

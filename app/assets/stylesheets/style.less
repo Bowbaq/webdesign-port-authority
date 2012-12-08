@@ -1,13 +1,25 @@
 @import "reset.less";
 @import "mixins.less"; // Don't remove this
 
+@navOrange: rgb(255, 92, 37);
+@navBlue: #00AAB5;
+
+body {
+    font-family: ;
+    font: 18px 'Source Sans Pro', sans-serif;
+}
+
 a {
 	text-decoration: none;
 	color:inherit;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	color: #00CED1;
+	color: @navBlue;
+}
+
+h1 {
+    font-size: 150%;
 }
 
 span {
@@ -15,78 +27,122 @@ span {
 }
 
 .container {
-    background-color: #EFEFED;
+    width: 80%;
+    margin-left: 15%;
 }
 
 // Header styles
 .header {
-	height: 175px;
-	background-color: #141412;
-	font-size: 10px;
+	height: 210px;
+    background: url('../images/header_texture.png');
 	
 	.logo {
-    	position:absolute;
-    	left:40px;
-    	top:40px;
-    }
-	
-	.logo-bus {
-    	position:absolute;
-    	left:-45px;
-    	height:200px;
-    	top:-5px;
+	   display: inline-block;
+	   height: 100%;
+	   width: 400px;
+	   
+	   background: url('../images/bus_transparent.png') no-repeat left top;
+	   
+	   img {
+	       padding: 40px;
+	   }
     }
     
     .nav {
-    	display:inline-block;
-    	float:right;
-    	
-    	padding-top: 15px;
-    	padding-right: 60px;
-    	
-    	.nav-item {
-    	    display:inline-block;
-    	    
-    	    padding-left: 60px;
-        	
-        	color: #00CED1;
-        	font-size:18px;
-        	text-align: center;
-        	
-        	.nav-img {
-            	display:inline-block;
-            	width:76px;
-            	height:76px;
-            	
-            	background:#000;
-            	
-            	border-radius:38px;
-            	border: 2px solid #000;
-            	
-            	font-size:20px;
-            	color:#fff;
-            	line-height:100px;
-            	text-align:center;
-            	text-decoration:none;
-            	
-            	img {
-            	    padding-bottom: 28px;
-                	vertical-align: middle;
-                	text-align:center;
-            	}
+        float: right;
+        
+        padding-top: 40px;
+        padding-right: 150px;
+        
+        .nav-item {
+            display: inline-block;
+            min-width: 100px;
+            
+            padding-left: 100px;
+            
+            .nav-link {
+                .rounded {                    
+                    width:76px;
+                    height:76px;
+                    
+                    margin: 0 auto;
+                    
+                    .border-radius(40px);
+                    border: 3px solid transparent;
+                    
+                    background: rgba(255, 255, 255, 0.1);
+                    
+                    text-align: center;
+                    
+                    img {
+                        margin-top: 16px;
+                    }
+                }
             }
             
-            &:hover .nav-img {
+            &.active a .rounded, a:hover .rounded {                    
+                background: rgba(255, 255, 255, 0.4);
+                
+                border: 3px solid @navBlue;
+                .box-shadow(0 0 15px 0 rgba(255, 255, 255, 0.75));
+                
                 text-decoration:none;
-            	background:#333;
-            	border: 2px solid #00CED1;
             }
             
-            .active .nav-img {
-            	text-decoration:none;
-            	background:#333;
-            	border: 2px solid #68B0B6;
+            &.active:after {
+                content: " ";
+                display: block;
+                width: 0;
+                height: 0;
+                border-left: 25px solid transparent;
+                border-right: 25px solid transparent;
+                border-bottom: 25px solid @navOrange;
+                position: relative;
+                bottom: -30px;
+                right: -24px;
             }
+            
+            p {
+                margin-top: 15px;
+                
+                color: @navBlue;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.secondary-nav {
+    height: 40px;
+    
+    background: @navOrange;
+    
+    ul {
+        height: 100%;
+        
+        &.three li {
+            width: 33%;
+        }
+    }
+    
+    li {
+        display: inline-block;
+        height: 100%;
+        
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        
+        &.active {
+            color: white;
+        }
+        
+        a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            
+            padding: 10px 0;
         }
     }
 }
