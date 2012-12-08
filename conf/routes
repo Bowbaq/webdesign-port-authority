@@ -4,6 +4,7 @@
 
 # Home page
 GET     /                                                       controllers.Application.index()
+
 # 
 # # Route page
 # GET     /routes                                             controllers.Transit.routes()

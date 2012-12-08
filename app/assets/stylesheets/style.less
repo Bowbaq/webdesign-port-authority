@@ -1,1 +1,108 @@
+@import "reset.less";
 @import "mixins.less"; // Don't remove this
+
+a {
+	text-decoration: none;
+	color:inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #00CED1;
+}
+
+span {
+	font-style:italic;
+}
+
+.container {
+    background-color: #EFEFED;
+}
+
+// Header styles
+.header {
+	height: 175px;
+	background-color: #141412;
+	font-size: 10px;
+	
+	.logo {
+    	position:absolute;
+    	left:40px;
+    	top:40px;
+    }
+	
+	.logo-bus {
+    	position:absolute;
+    	left:-45px;
+    	height:200px;
+    	top:-5px;
+    }
+    
+    .nav {
+    	display:inline-block;
+    	float:right;
+    	
+    	padding-top: 15px;
+    	padding-right: 60px;
+    	
+    	.nav-item {
+    	    display:inline-block;
+    	    
+    	    padding-left: 60px;
+        	
+        	color: #00CED1;
+        	font-size:18px;
+        	text-align: center;
+        	
+        	.nav-img {
+            	display:inline-block;
+            	width:76px;
+            	height:76px;
+            	
+            	background:#000;
+            	
+            	border-radius:38px;
+            	border: 2px solid #000;
+            	
+            	font-size:20px;
+            	color:#fff;
+            	line-height:100px;
+            	text-align:center;
+            	text-decoration:none;
+            	
+            	img {
+            	    padding-bottom: 28px;
+                	vertical-align: middle;
+                	text-align:center;
+            	}
+            }
+            
+            &:hover .nav-img {
+                text-decoration:none;
+            	background:#333;
+            	border: 2px solid #00CED1;
+            }
+            
+            .active .nav-img {
+            	text-decoration:none;
+            	background:#333;
+            	border: 2px solid #68B0B6;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:960px){
+	.nav {
+	    padding-right: 45px;
+	    
+	    .nav-item{
+    	    padding-left: 30px;
+    	}
+	}
+}
+
+@media screen and (max-width: 767px){
+	body{
+		display:none;
+	}
+}
