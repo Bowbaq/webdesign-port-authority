@@ -4,12 +4,15 @@ import com.avaje.ebean.Ebean;
 import com.avaje.ebean.RawSql;
 import com.avaje.ebean.RawSqlBuilder;
 import org.apache.commons.lang3.time.DateUtils;
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonValue;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -18,10 +21,12 @@ public class StopTime extends Model {
     @Id
     public Long id;
 
+    @JsonIgnore
     @Constraints.Required
     @ManyToOne(targetEntity = Trip.class)
     public Trip trip;
 
+    @JsonIgnore
     @Constraints.Required
     @ManyToOne(targetEntity = Stop.class)
     public Stop stop;
@@ -65,6 +70,11 @@ public class StopTime extends Model {
                 .order().asc("stop_time.departure")
                 .findList()
                 ;
+    }
+
+    @JsonValue
+    public String getDeparture() {
+        return new SimpleDateFormat("hh:mm a").format(departure);
     }
 
     public String remaining() {

@@ -1,5 +1,6 @@
 var Routes = (function(routes) {
   var template = _.template($('#routes-form').html()),
+      schedule_tpl = _.template($('#route-schedule').html()),
       form,
       FORM_TRANSITION = 500
   ;
@@ -61,19 +62,29 @@ var Routes = (function(routes) {
       $this.addClass('selected');
       $this.off('click.show');
       $this.on('click.hide', preHideForm);
+      
+      var $radio = form.find('[name="direction"]');
+      var $select = $radio.nextAll('select[name="stop"]');
+      var $go = $radio.nextAll('input[type="submit"]');
 
-      form.find('[name="direction"]').on('click.direction', function(){
-        var $radio = $(this),
-            $select = $radio.nextAll('select[name="stop"]'),
-            $go = $radio.nextAll('input[type="submit"]')
-        ;
-
-        $select.html($this.find('script.inbound').html());
-        $go.on('click', function(e){
-          e.preventDefault();
-          alert('This doesn\'t work yet ...');
-        });
+      $radio.on('click.direction', function(){
+        if($radio.val() == 1) {
+          $select.html($this.find('script.inbound').html());
+        } else {
+          $select.html($this.find('script.outbound').html());
+        }
+        
         $go.removeAttr('disabled');
+      });
+      
+      form.find('input[type="submit"]').on('click', function(e){
+        e.preventDefault();
+        
+        showSchedule(
+          $this.attr('data-route-id'),
+          $radio.val(),
+          $select.val()
+        );
       });
 
       setTimeout(function(){
@@ -81,6 +92,25 @@ var Routes = (function(routes) {
       }, 0);
     });
   };
+  
+  function showSchedule(route_id, direction, stop_id) {
+    console.log(route_id, direction, stop_id);
+    $.ajax({
+      type: 'GET',
+      url: 'http://' + window.location.host + '/schedule/route/' + route_id + '/direction/' + direction + '/stop/' + stop_id,
+      success: onReceiveSchedule,
+      error: onFetchScheduleError
+    });
+  }
+  
+  function onReceiveSchedule(data){
+    console.log('Success :', { times: JSON.parse(data) });
+    form.append(schedule_tpl({ times: JSON.parse(data) }));
+  }
+  
+  function onFetchScheduleError() {
+    console.log('Error :', arguments);
+  }
   
   routes.hook = function hook() {
     $('.route').on('click.show', showForm);

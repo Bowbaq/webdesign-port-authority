@@ -27,7 +27,7 @@
     </div>
     <div id="routes">
     @for(route <- routes) {
-        <div class="route">
+        <div class="route" data-route-id="@route.id">
             <p>@route.short_name</p>
             <p>@route.long_name</p>
             <script type="text/template" class="inbound">
@@ -58,5 +58,8 @@
             <input type="submit" value="Go" disabled="disabled">
         </form>
     </div>
+</script>
+<script type="text/template" id="route-schedule">
+    <% _.forEach(times, function(time) { %> <span><%= time %></span> <% }); %>
 </script>
 }

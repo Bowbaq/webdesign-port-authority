@@ -5,6 +5,9 @@
 # Home page
 GET     /                                                       controllers.Application.index()
 
+# Schedule AJAX
+GET     /schedule/route/:route_id/direction/:direction/stop/:stop_id    controllers.Application.getSchedule(route_id: String, direction: java.lang.Integer, stop_id: String)
+
 # Re-import data
 # GET     /import                                             controllers.Importer.doImport()
 
