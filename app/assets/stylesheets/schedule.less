@@ -17,4 +17,19 @@
             width: 100%;
         }
     }
+    
+    .route-form {
+        max-height: 0px;
+        height: 300px;
+        
+        overflow: hidden;
+        
+        .transition(max-height 0.5s ease-in-out);
+        
+        background: orange;
+         
+        &.expanded {
+            max-height: 300px;
+        }
+    }
 }
