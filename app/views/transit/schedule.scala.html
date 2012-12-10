@@ -1,4 +1,4 @@
-@()
+@(routes: List[models.gtfs.Route])
 
 @navbar = {
     <ul class="three">
@@ -9,7 +9,24 @@
 }
 
 @main("Schedule planner", navbar, "transit") {
+<div class="container clearfix schedule-page">
     <h1>Schedule planner</h1>
     
-    
+    <form id="route-search">
+        <input type="text" name="search" value="" id="search" placeholder="Route name (Aiport Flyer) or number (28X)">
+    </form>
+    <div id="quick-select">
+        <button id="regular">Regular Routes</button>
+        <button id="flyer">Flyer</button>
+        <button id="special">T / Incline</button>
+    </div>
+    <div id="routes">
+    @for(route <- routes) {
+        <div class="route">
+            <p>@route.short_name</p>
+            <p>@route.long_name</p>
+        </div>
+    }
+    </div>
+</div>
 }

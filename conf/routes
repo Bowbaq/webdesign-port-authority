@@ -5,37 +5,8 @@
 # Home page
 GET     /                                                       controllers.Application.index()
 
-# 
-# # Route page
-# GET     /routes                                             controllers.Transit.routes()
-# 
-# # Direction page
-# GET     /direction/:route_id                                controllers.Transit.directions(route_id: String)
-# 
-# # Stops page
-# GET     /stops/:route_id/:direction                         controllers.Transit.stops(route_id: String, direction: java.lang.Integer)
-# 
-# # Schedule page
-# GET     /schedule/:route_id/:direction/:stop_id             controllers.Transit.schedule(route_id: String, stop_id: String, direction: java.lang.Integer)
-# 
-# 
-# GET     /nearby                                             controllers.Transit.preNearby()
-# 
-# # Get nearby stops
-# GET     /nearby/:lat/:lng                                   controllers.Transit.nearby(lat: util.DoubleW, lng: util.DoubleW)
-# 
-# # Get routes for nearby stop
-# GET     /near/stop/:stop_id                                 controllers.Transit.nearbyRoutes(stop_id: String)
-# 
-# # Get direction for route for nearby stop
-# GET     /near/stop/:stop_id/route/:route_id                 controllers.Transit.directedNearbyRoute(stop_id: String, route_id: String)
-# 
-# # Get times for nearby stop, route, direction
-# GET     /near/stop/:stop_id/route/:route_id/:direction      controllers.Transit.nearbyTimes(stop_id: String, route_id: String, direction: java.lang.Integer)
-
-
 # Re-import data
-GET     /import                                             controllers.Importer.doImport()
+# GET     /import                                             controllers.Importer.doImport()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file                                       controllers.Assets.at(path="/public", file)

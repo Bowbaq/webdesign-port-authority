@@ -2,11 +2,17 @@ package controllers;
 
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.transit.schedule;
+
+import java.util.List;
+
+import models.gtfs.Route;
+
+import views.html.transit.*;
 
 public class Application extends Controller {
     
     public static Result index() {
-        return ok(schedule.render());
+        List<Route> routes = Route.find.all();
+        return ok(schedule.render(routes));
     }
 }
