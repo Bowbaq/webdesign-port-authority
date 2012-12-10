@@ -1,6 +1,7 @@
 @(routes: List[models.gtfs.Route])
 
 @navbar = {
+    <!-- The content of the orange sub-nav is defined here for each page -->
     <ul class="three">
         <li class="active"><a href="@controllers.routes.Application.index()">Schedule planner</a></li>
         <li><a href="#">Transit planner</a></li>
@@ -9,7 +10,9 @@
 }
 
 @main("Schedule planner", navbar, "transit") {
-<div class="container clearfix schedule-page">
+<!-- Syntax : main("page title", navbar, "transit|fares|info|service (active menu icon)") -->
+<!-- Inside the "main" call the html of the page itself is defined -->
+<div class="container clearfix schedule-page"> <!-- schedule-page = specific class to target this particular page in CSS -->
     <h1>Schedule planner</h1>
     
     <form id="route-search">
