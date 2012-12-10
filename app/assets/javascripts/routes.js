@@ -3,9 +3,9 @@ var Routes = (function(routes) {
       form
   ;
   
-  var firstOnNewLine = function firstOnNewLine(element) {
-      var curr_top = element.position().top;
-      var next = element.next();
+  var firstOnNewLine = function firstOnNewLine($this) {
+      var curr_top = $this.position().top;
+      var next = $this.next();
       
       while(next.position().top <= curr_top) {
         next = next.next();
@@ -15,7 +15,7 @@ var Routes = (function(routes) {
   };
   
   var preHideForm = function preHideForm() {
-    var element = $(this);
+    var $this = $(this);
     
     if(form !== undefined && form !== null) {
       setTimeout(function(){
@@ -25,8 +25,7 @@ var Routes = (function(routes) {
       setTimeout(hideForm, 500);
     }
     
-    element.off('click.hide');
-    element.on('click.show', showForm);
+    $this.one('click.show', showForm);
   };
   
   var hideForm = function hideForm() {
@@ -36,19 +35,36 @@ var Routes = (function(routes) {
   };
   
   var showForm = function showForm() {
-    var element = $(this);
+    var $this = $(this);
     
     hideForm();
     form = $(template({}));
-    firstOnNewLine(element).before(form);
+    firstOnNewLine($this).before(form);
     
-    element.off('click.show');
-    element.on('click.hide', preHideForm);
+    $this.one('click.hide', preHideForm);
+    form.find('[name="direction"]').on('click.direction', function(){
+      var $radio = $(this),
+          $select = $radio.nextAll('select[name="stop"]'),
+          $go = $radio.nextAll('input[type="submit"]')
+      ;
+      
+      $select.html($this.find('script.inbound').html());
+      $go.on('click', function(e){
+        e.preventDefault();
+        alert('This doesn\'t work yet ...');
+      });
+      $go.removeAttr('disabled');
+    });
     
     setTimeout(function(){
-      console.log("Adding expanded");
       form.addClass('expanded');
     }, 0);
+  };
+  
+  var fillStopSelect = function fillStopSelect() {
+
+    
+    
   };
   
   
