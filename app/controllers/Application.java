@@ -5,7 +5,7 @@ import models.gtfs.Stop;
 import org.codehaus.jackson.map.ObjectMapper;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.transit.schedule;
+import views.html.transit.*;
 
 import java.io.IOException;
 import java.util.Date;
