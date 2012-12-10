@@ -27,7 +27,7 @@
     </div>
     <div id="routes">
     @for(route <- routes) {
-        <div class="route" data-route-id="@route.id">
+        <div class="route" data-route-name="@route.short_name" data-route-id="@route.id">
             <p>@route.short_name</p>
             <p>@route.long_name</p>
             <script type="text/template" class="inbound">

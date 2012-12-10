@@ -46,30 +46,30 @@ public class StopTime extends Model {
 
     public static List<StopTime> getTimes(Stop stop, Calendar calendar, Date now, Route route, Integer direction) {
         String sql = "SELECT stop_time.id, stop_time.stop_seq, stop_time.arrival, stop_time.departure, stop_time.pickup_type, stop_time.dropoff_type "
-                + "FROM stop_time JOIN trip ON trip.id = stop_time.trip_id "
-                + "WHERE trip.route_id = :route_id AND trip.service_id = :service_id AND trip.direction = :direction"
-                ;
+            + "FROM stop_time JOIN trip ON trip.id = stop_time.trip_id "
+            + "WHERE trip.route_id = :route_id AND trip.service_id = :service_id AND trip.direction = :direction"
+        ;
 
         RawSql raw = RawSqlBuilder
-                .parse(sql)
-                .columnMapping("stop_time.id", "id")
-                .columnMapping("stop_time.stop_seq", "stop_seq")
-                .columnMapping("stop_time.arrival", "arrival")
-                .columnMapping("stop_time.departure", "departure")
-                .columnMapping("stop_time.pickup_type", "pickup_type")
-                .columnMapping("stop_time.dropoff_type", "dropoff_type")
-                .create()
-                ;
+            .parse(sql)
+            .columnMapping("stop_time.id", "id")
+            .columnMapping("stop_time.stop_seq", "stop_seq")
+            .columnMapping("stop_time.arrival", "arrival")
+            .columnMapping("stop_time.departure", "departure")
+            .columnMapping("stop_time.pickup_type", "pickup_type")
+            .columnMapping("stop_time.dropoff_type", "dropoff_type")
+            .create()
+        ;
 
         return Ebean.find(StopTime.class)
-                .setRawSql(raw)
-                .setParameter("route_id", route.id)
-                .setParameter("service_id", calendar.id)
-                .setParameter("direction", direction)
-                .where().eq("stop_time.stop_id", stop.id)
-                .order().asc("stop_time.departure")
-                .findList()
-                ;
+            .setRawSql(raw)
+            .setParameter("route_id", route.id)
+            .setParameter("service_id", calendar.id)
+            .setParameter("direction", direction)
+            .where().eq("stop_time.stop_id", stop.id)
+            .order().asc("stop_time.departure")
+            .findList()
+        ;
     }
 
     @JsonValue
