@@ -18,3 +18,5 @@ dist
 /conf/evolutions/
 /.settings
 /data/data.sql
+/mockup.bmml
+/data
