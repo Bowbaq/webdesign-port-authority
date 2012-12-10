@@ -12,15 +12,26 @@
         
         background: blue;
         
-        &.expanded {
-            display:block;
-            width: 100%;
+        &.selected:after {
+            content: " ";
+            display: block;
+            width: 0;
+            height: 0;
+            margin: 0 auto;
+            
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid orange;
+            position: relative;
+            bottom: -10px;
         }
     }
     
     .route-form {
         max-height: 0px;
         height: 300px;
+        
+        margin: 0 0.2em;
         
         overflow: hidden;
         

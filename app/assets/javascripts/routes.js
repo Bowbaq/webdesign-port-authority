@@ -3,29 +3,36 @@ var Routes = (function(routes) {
       form
   ;
   
-  var firstOnNewLine = function firstOnNewLine($this) {
-      var curr_top = $this.position().top;
-      var next = $this.next();
+  var lastOfLine = function lastOfLine($this) {
+      var ref_top = $this.position().top,
+          prev = $this,
+          next = $this.next('.route')
+      ;
       
-      while(next.position().top <= curr_top) {
-        next = next.next();
+      while(next.position() && next.position().top <= ref_top) {
+        prev = next;
+        next = next.next('.route');
       }
       
-      return next;
+      return prev;
   };
   
   var preHideForm = function preHideForm() {
-    var $this = $(this);
+    var $this = $(this);    
     
     if(form !== undefined && form !== null) {
       setTimeout(function(){
         form.removeClass('expanded');
       }, 0);
       
-      setTimeout(hideForm, 500);
+      setTimeout(function(){
+        hideForm();
+        $this.removeClass('selected');
+      }, 500);
     }
     
-    $this.one('click.show', showForm);
+    $this.off('click.hide');
+    $this.on('click.show', showForm);
   };
   
   var hideForm = function hideForm() {
@@ -39,9 +46,11 @@ var Routes = (function(routes) {
     
     hideForm();
     form = $(template({}));
-    firstOnNewLine($this).before(form);
+    lastOfLine($this).after(form);
     
-    $this.one('click.hide', preHideForm);
+    $this.addClass('selected');
+    $this.off('click.show');
+    $this.on('click.hide', preHideForm);
     form.find('[name="direction"]').on('click.direction', function(){
       var $radio = $(this),
           $select = $radio.nextAll('select[name="stop"]'),
@@ -60,13 +69,6 @@ var Routes = (function(routes) {
       form.addClass('expanded');
     }, 0);
   };
-  
-  var fillStopSelect = function fillStopSelect() {
-
-    
-    
-  };
-  
   
   routes.hook = function hook() {
     $('.route').on('click.show', showForm);
