@@ -32,16 +32,21 @@
         <div class="route" data-route-name="@route.short_name" data-route-long-name="@route.long_name" data-route-id="@route.id">
             <p>@route.short_name</p>
             <p>@route.long_name</p>
+            @if(route.directions.inbound()) {
             <script type="text/template" class="inbound">
-            @for(stop <- route.stops(Trip.INBOUND)) {
+                @for(stop <- route.inboundStops()) {
                 <option value="@stop.id">@stop.name</option>
-            }
+                }
             </script>
+            }
+
+            @if(route.directions.outbound()) {
             <script type="text/template" class="outbound">
-            @for(stop <- route.stops(Trip.OUTBOUND)) {
+                @for(stop <- route.outboundStops()) {
                 <option value="@stop.id">@stop.name</option>
-            }
+                }
             </script>
+            }
         </div>
     }
     </div>
