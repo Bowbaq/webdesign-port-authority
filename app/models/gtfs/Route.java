@@ -1,6 +1,8 @@
 package models.gtfs;
 
 import com.avaje.ebean.*;
+import play.Logger;
+import play.cache.Cache;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
@@ -28,27 +30,37 @@ public class Route extends Model {
     private Directions directions;
 
     public List<Stop> stops(Integer direction) {
-        String sql = "SELECT DISTINCT(stop.id), stop.code, stop.name, stop.lat, stop.lng, stop.zone "
-                   + "FROM stop JOIN stop_time ON stop.id = stop_time.stop_id JOIN trip ON trip.id = stop_time.trip_id"
-        ;
+        List<Stop> stops = (List<Stop>) Cache.get("route_stops_" + id + "_" + direction);
+        if(stops == null ) {
+            Logger.info("Cache miss : " + "route_stops_" + id + "_" + direction);
 
-        RawSql raw = RawSqlBuilder
-            .parse(sql)
-            .columnMapping("DISTINCT(stop.id)", "id")
-            .columnMapping("stop.code", "code")
-            .columnMapping("stop.name", "name")
-            .columnMapping("stop.lat", "lat")
-            .columnMapping("stop.lng", "lng")
-            .columnMapping("stop.zone", "zone")
-            .create()
-        ;
+            String sql = "SELECT DISTINCT(stop.id), stop.code, stop.name, stop.lat, stop.lng, stop.zone "
+                + "FROM stop JOIN stop_time ON stop.id = stop_time.stop_id JOIN trip ON trip.id = stop_time.trip_id"
+            ;
 
-        return Ebean.find(Stop.class)
-            .setRawSql(raw)
-            .where().eq("trip.route_id", id)
-            .where().eq("trip.direction", direction)
-            .order().asc("stop.name")
-            .findList();
+            RawSql raw = RawSqlBuilder
+                .parse(sql)
+                .columnMapping("DISTINCT(stop.id)", "id")
+                .columnMapping("stop.code", "code")
+                .columnMapping("stop.name", "name")
+                .columnMapping("stop.lat", "lat")
+                .columnMapping("stop.lng", "lng")
+                .columnMapping("stop.zone", "zone")
+                .create()
+            ;
+
+            stops =  Ebean.find(Stop.class)
+                .setRawSql(raw)
+                .where().eq("trip.route_id", id)
+                .where().eq("trip.direction", direction)
+                .order().asc("stop.name")
+                .findList()
+            ;
+
+            Cache.set("route_stops_" + id + "_" + direction, stops);
+        }
+
+        return stops;
     }
     
     public Directions directions() {

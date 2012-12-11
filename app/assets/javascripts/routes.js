@@ -72,7 +72,7 @@ var Routes = (function(routes) {
       var $go = $radio.nextAll('input[type="submit"]');
 
       $radio.on('click.direction', function(){
-        if($radio.val() == 1) {
+        if($(this).val() == 1) {
           $select.html($this.find('script.inbound').html());
         } else {
           $select.html($this.find('script.outbound').html());
@@ -86,7 +86,7 @@ var Routes = (function(routes) {
         
         showSchedule(
           $this.attr('data-route-id'),
-          $radio.val(),
+          form.find('[name="direction"]:checked').val(),
           $select.val()
         );
       });
