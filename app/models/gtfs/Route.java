@@ -41,6 +41,7 @@ public class Route extends Model {
         outbound = new ArrayList<Stop>();
     }
 
+    @SuppressWarnings("unchecked")
     public static ArrayList<Route> getAllWithStops() {
         ArrayList<Route> routes = (ArrayList<Route>) Cache.get("route_stops");
 
