@@ -1,5 +1,4 @@
 .schedule-page {
-    
     .box() {
         .box-sizing(border-box);
         .user-select(none);
@@ -119,14 +118,32 @@
         }
         
         #schedule {
-            tr td:first-child {
-                font-weight: bold;
+            margin: 1em;
+            
+            tr {
                 background: white;
+                border-bottom: 1px solid #BBB;
+            }
+            
+            tr:nth-child(odd){
+                color: #999;
+            }
+            
+            tr:nth-child(even){
+                color: black;
+            }
+            
+            td:first-child {
+                font-weight: bold;
+                text-align: left;
+                
+                padding-left: 0;
+                padding-right: 1em;
             }
             
             span {
                 font-style: normal;
-                padding: 0 0.6em;
+                padding: 0 0.4em;
             }
         }
     }
