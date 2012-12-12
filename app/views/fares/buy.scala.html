@@ -1,15 +1,15 @@
 @navbar = {
     <!-- The content of the orange sub-nav is defined here for each page -->
     <ul class="three">
-        <li><a href="@controllers.routes.Application.fares()">Fares</a></li>
-        <li><a href="@controllers.routes.Application.zones()">Zones</a></li>
-        <li class="active"><a href="#">Where to buy</a></li>
+        <li class="left"><a href="@controllers.routes.Application.fares()">Fares</a></li>
+        <li class="center"><a href="@controllers.routes.Application.zones()">Zones</a></li>
+        <li class="active right"><a href="@controllers.routes.Application.buy()">Where to buy</a></li>
     </ul>
 }
 
 @main("Where to buy", navbar, "fares") {
 
-	<div class="container clearfix vuy-page">
+	<div class="container clearfix buy-page">
 		<h1>Where to buy</h1><br>
 		
 		<h4>Buy online</h4><br>

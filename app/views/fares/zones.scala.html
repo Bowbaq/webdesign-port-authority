@@ -1,9 +1,9 @@
 @navbar = {
     <!-- The content of the orange sub-nav is defined here for each page -->
     <ul class="three">
-        <li><a href="@controllers.routes.Application.fares()">Fares</a></li>
-        <li class="active"><a href="@controllers.routes.Application.zones()">Zones</a></li>
-        <li><a href="@controllers.routes.Application.buy()">Where to buy</a></li>
+        <li class="left"><a href="@controllers.routes.Application.fares()">Fares</a></li>
+        <li class="active center"><a href="@controllers.routes.Application.zones()">Zones</a></li>
+        <li class="right"><a href="@controllers.routes.Application.buy()">Where to buy</a></li>
     </ul>
 }
 
@@ -15,9 +15,9 @@
 			
 		<p>Port Authority operates a zone-based fare structure. The amount of fare is based on trip length originating from Downtown Pittsburgh. Higher fares are paid for trips crossing more than one zone.<br><br>
 			
-		<img class="zones" src="@routes.Assets.at("images/zones2.png")"/><br><br>
+		<a href="@routes.Assets.at("images/zones2.png")"><img class="zones" src="@routes.Assets.at("images/zones2.png")"/></a><br><br>
 
-		Port Authority‘s system consists of:<br><br><ul><li>A Free Fare Zone which includes Downtown Pittsburgh on the bus and Downtown/North Shore on the T light rail system</li><li>Two primary fare zones outside Downtown – Zone 1 and Zone 2 – and a small overlap zone, Zone 1A, in limited areas.</li><ul><br>Trips that begin and end within the same zone are charged a one-zone fare, with the exception of trips taken entirely within the Free Fare Zone.</p><br>
+		Port Authority‘s system consists of:<br><br><ul class="list"><li>A Free Fare Zone which includes Downtown Pittsburgh on the bus and Downtown/North Shore on the T light rail system</li><li>Two primary fare zones outside Downtown – Zone 1 and Zone 2 – and a small overlap zone, Zone 1A, in limited areas.</li></ul><br>Trips that begin and end within the same zone are charged a one-zone fare, with the exception of trips taken entirely within the Free Fare Zone.</p><br>
 
 		<h4>Fare Free Zone</h4><br>
 			

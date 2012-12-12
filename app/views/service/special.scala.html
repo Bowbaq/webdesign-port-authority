@@ -3,14 +3,15 @@
 @navbar = {
     <!-- The content of the orange sub-nav is defined here for each page -->
     <ul class="two">
-        <li><a href="@controllers.routes.Application.service()">Bikes on transit</a></li>
-        <li class="active"><a href="@controllers.routes.Application.special()">Riders with special needs</a></li>
+        <li class="left"><a href="@controllers.routes.Application.service()">Bikes on transit</a></li>
+        <li class="right active"><a href="@controllers.routes.Application.special()">Riders with special needs</a></li>
     </ul>
 }
 
 @main("Riders with special needs", navbar, "service") {
 
 <div class=" container cleafix special-page">
+	<h1>Riders with special needs</h1>
 	<p>In keeping with its mission of connecting people to life, Port Authority of Allegheny County strives to make its system as accessible as possible and comply with the Americans with Disabilities Act.</p><br>
 		<p>Port Authority offers a host of information and services for riders with special needs:</p><br>
 		<ul class="list">
@@ -25,14 +26,14 @@
 
 		<span class="ital">What is the Americans with Disabilities Act (ADA)?</span><br><br>
 
-		<p>In 1990, the Americans with Disabilities Act (ADA) was passed by Congress and signed into law by former President George H.W. Bush. Among other requirements, this civil rights legislation entitles persons with disabilities equal opportunity to participate in society. As such, public transportation agencies are required by law to provide the necessary ADA-compliant equipment and accommodations.</p><br>
+		<p class="answer">In 1990, the Americans with Disabilities Act (ADA) was passed by Congress and signed into law by former President George H.W. Bush. Among other requirements, this civil rights legislation entitles persons with disabilities equal opportunity to participate in society. As such, public transportation agencies are required by law to provide the necessary ADA-compliant equipment and accommodations.</p><br>
 
 		<span class="ital">What is Paratransit Service?</span><br><br>
 
-		<p>Paratransit service is specialized door-to-door, shared-ride transit for persons who are, due to physical limitations, unable to ride regular fixed-route transit service. Since 1979, ACCESS Transportation Systems, Inc. has operated paratransit service for Port Authority offering advance-reservation shared ride transportation services throughout the Authority‘s service area.</p><br>
+		<p class="answer">Paratransit service is specialized door-to-door, shared-ride transit for persons who are, due to physical limitations, unable to ride regular fixed-route transit service. Since 1979, ACCESS Transportation Systems, Inc. has operated paratransit service for Port Authority offering advance-reservation shared ride transportation services throughout the Authority‘s service area.</p><br>
 		<span class="ital">Is Port Authority‘s System ADA-Accessible?</span><br><br>
 
-		<p>All Port Authority bus and light rail/T vehicles and the Monongahela Incline are ADA-compliant.<br><br>
+		<p class="answer">All Port Authority bus and light rail/T vehicles and the Monongahela Incline are ADA-compliant.<br><br>
 		All buses are equipped with either wheelchair ramps or lifts. Operators are required to test their vehicle‘s lift/ramp before leaving the garage each day and report any issues they find.<br><br>
 
 		All stations along the West Busway and Martin Luther King Jr. East Busway are ADA-accessible, featuring wheelchair ramps, curb cuts, guide rails and key station information available in Braille. Select South Busway stations are accessible: South Hills Junction, Palm Garden, Pioneer and Glenbury.<br><br>
@@ -42,7 +43,7 @@
 
 		<span class="ital">What Happens if a Lift or Ramp on my Bus Doesn‘t Work?</span><br><br>
 
-		<p>Like any other equipment, wheelchair lifts and ramps can occasionally malfunction. In that event, Port Authority‘s Safety Net program guarantees transportation for persons with disabilities.<br><br>
+		<p class="answer">Like any other equipment, wheelchair lifts and ramps can occasionally malfunction. In that event, Port Authority‘s Safety Net program guarantees transportation for persons with disabilities.<br><br>
 
 		Here‘s how it works. When a person in a wheelchair or scooter is unable to board a bus due to a malfunctioning lift/ramp or other circumstances, and the next bus is more than 30 minutes from arrival, Port Authority will dispatch a bus with working equipment to take the rider to his or her destination. If a bus is not available, an ACCESS vehicle will be sent. However, if the next bus is due within 30 minutes, you will be asked to wait for that bus.<br><br>
 
@@ -50,65 +51,65 @@
 
 		<span class="ital">Can a Port Authority Bus or T Operator Assist Me?</span><br><br>
 
-		<p>If asked, Port Authority operators will assists customers using wheelchairs, canes or walkers. Operators can also assist in securing wheelchairs using the safety equipment present on all Port Authority vehicles.<br><br>
+		<p class="answer">If asked, Port Authority operators will assists customers using wheelchairs, canes or walkers. Operators can also assist in securing wheelchairs using the safety equipment present on all Port Authority vehicles.<br><br>
 		To better assist persons with visual disabilities, the vehicle‘s route number and direction/destination is announced by either the perator or an automated annunciator upon approaching or servicing a stop or station. Major stops and stations are also announced.</p><br>
 
 		<span class="ital">Can I Bring a Service Animal on Port Authority Vehicles?</span><br><br>
-		<p>Service animals – including, but not limited to, guide dogs – are permitted on all Port Authority vehicles. These animals do not necessarily have to be on a traditional harness but must be controlled by their owners while on the vehicle.<br><br>
+		<p class="answer">Service animals – including, but not limited to, guide dogs – are permitted on all Port Authority vehicles. These animals do not necessarily have to be on a traditional harness but must be controlled by their owners while on the vehicle.<br><br>
 		Guide dogs in training are also permitted. No extra fare is required for animals.</p><br>
 
 		<span class="ital">What Does "Curbing" the Bus Mean?</span><br><br>
 
-		<p>Curbing the bus is when the operator pulls the vehicle up close to the curb (about six inches) when serving a stop or station. By placing the front door of the bus as close to the sidewalk as possible, curbing allows for easier boarding and alighting as well as safer wheelchair ramp/lift deployment. Port Authority operators should curb the bus wherever possible, although factors such as parked cars, broken curbs or snow banks may prevent this. If an operator is not able to curb the bus, he or she will stop the vehicle a safe distance from the curb.</p><br>
+		<p class="answer">Curbing the bus is when the operator pulls the vehicle up close to the curb (about six inches) when serving a stop or station. By placing the front door of the bus as close to the sidewalk as possible, curbing allows for easier boarding and alighting as well as safer wheelchair ramp/lift deployment. Port Authority operators should curb the bus wherever possible, although factors such as parked cars, broken curbs or snow banks may prevent this. If an operator is not able to curb the bus, he or she will stop the vehicle a safe distance from the curb.</p><br>
 
 		<span class="ital">What are Bus Kneelers?</span>
 
-		<p>All Port Authority buses are equipped with kneelers. Kneelers lower the front of the bus, allowing for easier boarding and disembarking. Kneelers are especially helpful to senior citizens or persons with mobility issues who do not need to use a wheelchair, but may need some extra help stepping on or off the bus. If you need the assistance of the kneeler, simply ask the operator to lower the steps.</p><br>
+		<p class="answer">All Port Authority buses are equipped with kneelers. Kneelers lower the front of the bus, allowing for easier boarding and disembarking. Kneelers are especially helpful to senior citizens or persons with mobility issues who do not need to use a wheelchair, but may need some extra help stepping on or off the bus. If you need the assistance of the kneeler, simply ask the operator to lower the steps.</p><br>
 
 		<span class="ital">Do Port Authority Operators Receive ADA Training?</span><br><br>
 
-		<p>Yes. As part of the driver training curriculum, all new Port Authority operators are required to attend an ADA training session. Operators are then retrained every three years or upon request.</p><br>
+		<p class="answer">Yes. As part of the driver training curriculum, all new Port Authority operators are required to attend an ADA training session. Operators are then retrained every three years or upon request.</p><br>
 
-		<p>This training is computer-based and tests the operator‘s knowledge of ADA compliance and Port Authority‘s ADA policies and procedures.</p><br>
+		<p class="answer">This training is computer-based and tests the operator‘s knowledge of ADA compliance and Port Authority‘s ADA policies and procedures.</p><br>
 
 		<span>Is There Priority Seating for Persons with Disabilities?</span><br><br>
 
-		<p>Yes, priority seating is located near the front of each bus or light rail vehicle. When necessary, Port Authority operators will ask other riders to vacate designated seats for persons with disabilities and senior citizens.</p><br>
+		<p class="answer">Yes, priority seating is located near the front of each bus or light rail vehicle. When necessary, Port Authority operators will ask other riders to vacate designated seats for persons with disabilities and senior citizens.</p><br>
 
 		<span>Does It Matter What Size Wheelchair I Have in Order to Ride the Bus?</span><br><br>
 
-		<p>Yes. By law, Port Authority can safely accommodate all ADA-standard wheelchairs on its buses, light rail vehicles and the Monongahela Incline. A standard wheelchair is approximately 30 inches wide by 48 inches long and weighs no more than 600 pounds. This limit includes the combined weight of both the individual and wheelchair. ADA-standard chairs may include both manual wheelchairs and motorized scooters.</p><br>
+		<p class="answer">Yes. By law, Port Authority can safely accommodate all ADA-standard wheelchairs on its buses, light rail vehicles and the Monongahela Incline. A standard wheelchair is approximately 30 inches wide by 48 inches long and weighs no more than 600 pounds. This limit includes the combined weight of both the individual and wheelchair. ADA-standard chairs may include both manual wheelchairs and motorized scooters.</p><br>
 
-		<p>Non-standard wheelchairs may not be compatible with most Port Authority vehicles, and may be too heavy or large to use the bus lift or ramp or to be safely secured while on the vehicle. Transit riders should take this into consideration when purchasing a new wheelchair or scooter.</p><br>
+		<p class="answer">Non-standard wheelchairs may not be compatible with most Port Authority vehicles, and may be too heavy or large to use the bus lift or ramp or to be safely secured while on the vehicle. Transit riders should take this into consideration when purchasing a new wheelchair or scooter.</p><br>
 
-		<span>What Should I Do if My Bus Stop is Littered or Not Accessible in Bad Weather?</span>
+		<span>What Should I Do if My Bus Stop is Littered or Not Accessible in Bad Weather?</span><br><br>
 
-		<p>Call your municipality or report the problem to Port Authority Customer Service to help ensure that the bus stops you use are clear of snow, ice or debris. When accumulated near the corner or along the sidewalk, these factors can make it difficult for Port Authority operators to deploy bus lifts or ramps.</p><br>
+		<p class="answer">Call your municipality or report the problem to Port Authority Customer Service to help ensure that the bus stops you use are clear of snow, ice or debris. When accumulated near the corner or along the sidewalk, these factors can make it difficult for Port Authority operators to deploy bus lifts or ramps.</p><br>
 
-		<p>Port Authority‘s busway and T stations are kept clean of snow, ice and debris to ensure the safety of all riders.</p><br>
+		<p class="answer">Port Authority‘s busway and T stations are kept clean of snow, ice and debris to ensure the safety of all riders.</p><br>
 
 		<span>Do I Have to Visit the Downtown Service Center to Purchase My Half-Fare Tickets?</span><br><br>
 
 		<p>No. You can purchase half-fare tickets in our online shop.</p><br>
 
-		<span>How Can I Get a Half-Fare Identification Card?</span>
-		<p>A half-fare identification card is required to use half-fare tickets on Port Authority‘s system. Riders may obtain a free half-fare ID card from the Port Authority Downtown Service Center, located at 534 Smithfield Street in Downtown Pittsburgh. By calling the Service Center at 412-255-1356, an application can be mailed to your home or place of employment. You may also pick up an application from the center during regular business hours, Monday-Friday 8 a.m. through 5 p.m.</p><br>
-		<p>In addition to the completed application, a letter from your primary care physician describing your disability must also be presented in person at the Service Center. Riders who have a red-white-&amp;-blue Medicare disability card do not need a doctor‘s letter and may bring their Medicare card and a photo ID to the Service Center instead.</p> <br>
-		<p>If you are approved for a half-fare ID, you will receive a card in the mail within two or three weeks. Half-fare ID cards do not expire.</p><br>
+		<span>How Can I Get a Half-Fare Identification Card?</span><br><br>
+		<p class="answer">A half-fare identification card is required to use half-fare tickets on Port Authority‘s system. Riders may obtain a free half-fare ID card from the Port Authority Downtown Service Center, located at 534 Smithfield Street in Downtown Pittsburgh. By calling the Service Center at 412-255-1356, an application can be mailed to your home or place of employment. You may also pick up an application from the center during regular business hours, Monday-Friday 8 a.m. through 5 p.m.</p><br>
+		<p class="answer">In addition to the completed application, a letter from your primary care physician describing your disability must also be presented in person at the Service Center. Riders who have a red-white-&amp;-blue Medicare disability card do not need a doctor‘s letter and may bring their Medicare card and a photo ID to the Service Center instead.</p> <br>
+		<p class="answer">If you are approved for a half-fare ID, you will receive a card in the mail within two or three weeks. Half-fare ID cards do not expire.</p><br>
 		<span>How Do I Submit a Commendation or Complaint?</span><br><br>
-		<p>Port Authority‘s Customer Service phone line is open Monday-Friday from 6 a.m. to 7 p.m. and on weekends and major holidays from 8 a.m. to 4:30 p.m. at 412-442-2000 or for TTY, 412-231-7007. Use this number to submit a comment, question, suggestion or complaint about our service.</p><br>
-		<p>When Customer Service is closed, you may leave a message or use our feedback form to submit your feedback. You may also write to us at:</p><br>
-		<p class="address">Port Authority Customer Service<br>345 Sixth Avenue, Third Floor<br>Pittsburgh, PA 15222</p><br>
-		<p>Your comments and suggestions help us improve the system and are valuable in planning and evaluating service. Please tell us when our service exceeds your expectations. Our drivers do everything they can to make your trip pleasant and appreciate being acknowledged. Commendations are signed by the driver‘s supervisor and presented to the driver who has gone the extra mile. Please also promptly tell us when you have been inconvenienced by our service so that we can immediately correct the problem.</p><br>
-		<p>When you call with a comment or complaint, please have the following information ready:</p><br>
-		<ul>
+		<p class="answer">Port Authority‘s Customer Service phone line is open Monday-Friday from 6 a.m. to 7 p.m. and on weekends and major holidays from 8 a.m. to 4:30 p.m. at 412-442-2000 or for TTY, 412-231-7007. Use this number to submit a comment, question, suggestion or complaint about our service.</p><br>
+		<p class="answer">When Customer Service is closed, you may leave a message or use our feedback form to submit your feedback. You may also write to us at:</p><br>
+		<p class="address answer">Port Authority Customer Service<br>345 Sixth Avenue, Third Floor<br>Pittsburgh, PA 15222</p><br>
+		<p class="answer">Your comments and suggestions help us improve the system and are valuable in planning and evaluating service. Please tell us when our service exceeds your expectations. Our drivers do everything they can to make your trip pleasant and appreciate being acknowledged. Commendations are signed by the driver‘s supervisor and presented to the driver who has gone the extra mile. Please also promptly tell us when you have been inconvenienced by our service so that we can immediately correct the problem.</p><br>
+		<p class="answer">When you call with a comment or complaint, please have the following information ready:</p><br>
+		<ul class="list">
 			<li>Your name and contact information</li>
 			<li>The date, time and travel direction of your trip (for example, „inbound,“ „away from Downtown“ or „toward Oakland“)</li>
 			<li>A description of what happened, including the location of the occurrence</li>
 			<li>The route number or designation, if applicable (for example, "16, "71A Negley" "P71" or "Blue Line-South Hills Village")</li>
 		</ul><br><br>
-		<p>The following information is not necessary, but is helpful if you can provide it:</p><br>
-		<ul>
+		<p class="answer">The following information is not necessary, but is helpful if you can provide it:</p><br>
+		<ul class="list">
 			<li>The four-digit vehicle number. This is found on the interior of the bus or T above the windshield/operator, on the front right exterior corner (near the front door) and on the rear exterior of the vehicle. Riders with visual impairments can find the vehicle number in Braille on the interior left side of the front door on a bus. On the T, the vehicle number is posted in Braille on an ID plate to right of the low-level door inside the light rail vehicle.</li>
 			<li>The driver‘s number, which is found on his or her uniform shirt.</li>
 		</ul>
@@ -118,9 +119,9 @@
 		<p>Service is provided from 6:00 a.m. to midnight, seven days a week, and at such other times and places that Port Authority fixed route service is in operation. There are no restrictions on the purpose or number of trips which may be taken by riders, except that riders are required to share their vehicle with others traveling in the same direction and at the same time.</p><br>
 		<p>ACCESS is sponsored by Port Authority of Allegheny County and is operated by ACCESS Transportation Systems, Inc., a subsidiary of Veolia Transportation.</p><br>
 
-		<p>Contact Information:</p><br>
+		<p class="answer">Contact Information:</p><br>
 
-		<p>ACCESS Transportation Systems, Inc.<br>
+		<p class="answer">ACCESS Transportation Systems, Inc.<br>
 		412-562-5353<br><br>
 
 		650 Smithfield Street<br>

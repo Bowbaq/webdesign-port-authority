@@ -1,0 +1,37 @@
+@navbar = {
+    <!-- The content of the orange sub-nav is defined here for each page -->
+    <ul class="two">
+        <li class="left"><a href="@controllers.routes.Application.info()">Detours</a></li>
+        <li class="right active"><a href="@controllers.routes.Application.changes()">Schedule Changes</a></li>
+    </ul>
+}
+
+@main("Schedule Changes", navbar, "info") {
+	<div class="container clearfix changes-page">
+		<h1>Schedule changes</h1>
+		<p>Port Authority makes routine changes to its schedules four times per year.<br><br>
+		Schedules for approximately 17 different bus routes will be adjusted on Sunday, November 18, 2012. Descriptions of the changes are included below.<br><br>
+		The next round of quarterly schedule adjustments will take place in March 2013.</p><br>
+		<table>
+			<tr><td>13</td><td>Bellevue: Trip times are adjusted.</td></tr>
+			<tr><td>26</td><td>Chartiers: Trip times are adjusted.</td></tr>
+			<tr><td>27</td><td>Fairywood: Trip times are adjusted.</td></tr>
+			<tr><td>29</td><td>Robinson: Trip times are adjusted.</td></tr>
+			<tr><td>61D</td><td>Murray: Three weekday morning inbound trips are added.</td></tr>
+			<tr><td>68</td><td>Braddock Hills: Trip times are adjusted. Note: The new schedule will be posted shortly; the original schedule PDF posted contained an error on the P71 section.</td></tr>
+			<tr><td>71</td><td>Edgewood: Trip times are adjusted. Note: The new schedule will be posted shortly; the original schedule PDF posted contained an error on the P71 section.</td></tr>
+			<tr><td>86</td><td>Liberty: Trip times are adjusted. Saturday afternoon trip frequency is increased from every 30 minutes to every 20 minutes.</td></tr>
+			<tr><td>87</td><td>Friendship: Trip times are adjusted. During weekday peak hours, trip frequency in peak directions is increased from every 10 minutes to every 8 minutes. Additionally, some Morningside trips (marked 87M) are extended to the Shop’n Save in Lawrenceville. On Saturdays, trip frequency is increased from every 45 minutes to eve- ry 40 minutes. On Sundays, a round trip is added at 5:50 p.m. (Downtown time).</td></tr>
+			<tr><td>P12</td><td>Holiday Park Flyer: The inbound trips arriving Downtown at 7:46 a.m. and 7:56 a.m. are discontinued, as is the outbound trip leaving Downtown at 5:05 p.m. Multiple morning and evening trip times are changed.</td></tr>
+			<tr><td>P68</td><td>Braddock Hills Flyer: Trip times are adjusted. Note: The new schedule will be posted shortly; the original schedule PDF posted contained an error on the P71 section.</td></tr>
+			<tr><td>P71</td><td>Swisshelm Park-Rankin Flyer: Trip times are adjusted. The 7:20 a.m. outbound trip is moved to 7:35 a.m. and the 9:10 a.m. inbound trip is moved to 9:15 a.m. (Downtown times). Note: The new schedule will be posted shortly; the original schedule PDF posted contained an error.</td></tr>
+			<tr><td>Y1</td><td>Large Flyer: Trip times are adjusted.</td></tr>
+			<tr><td>Y45</td><td>Baldwin Manor Flyer: Trip times are adjusted.</td></tr>
+			<tr><td>Y46</td><td>Elizabeth Flyer: Trip times are adjusted. On weekdays, one new morning inbound trip and one new afternoon outbound trip are added. Midday weekday frequency is increased from every 60 minutes to every 50 minutes; weekday evening frequency is increased from every 60 minutes to every 45 minutes. On Saturdays, Century III Mall service is added on two evening trips and some late night trip times are changed.</td></tr>
+			<tr><td>Y47</td><td>Curry Flyer: Trip times are adjusted.</td></tr>
+			<tr><td>Y49</td><td>Prospect Park Flyer: Trip times are adjusted.</td></tr>
+		</table><br>
+
+		<p>The next regular quarterly schedule adjustment will take place in March 2013. For questions or assistance, dial Customer Service at 412-442-2000 or for TTY, 412-231-7007.</p>
+	</div>
+}

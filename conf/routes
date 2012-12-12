@@ -32,7 +32,7 @@ GET /fares/buy			controllers.Application.buy()
 GET /info				controllers.Application.info()
 
 # Schedule Changes
-#GET /info/changes 		controllers.Application.changes()
+GET /info/changes 		controllers.Application.changes()
 # bikes on transit
 GET /service			controllers.Application.service()
 

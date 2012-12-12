@@ -51,9 +51,9 @@ public class Application extends Controller {
     public static Result info(){
         return ok(info.render());
     }
-    /*public static Result changes(){
+    public static Result changes(){
         return ok(changes.render());
-    }*/
+    }
     public static Result service(){
         return ok(service.render());
     }

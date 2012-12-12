@@ -18,19 +18,20 @@ h1, h2, h3, h4, h5, h6 {
 	color: @navBlue;
 }
 
-h1 {
-    font-size: 150%;
-    padding-top:35px;
-    padding-bottom:25px;
-}
-
 span {
 	font-style:italic;
 }
 
 .container {
-    margin-left: 15%;
-    margin-right:19%;
+    width: 880px;
+    margin:auto;
+    font-size:90%;
+}
+
+h1 {
+    font-size: 150%;
+    padding-top:35px;
+    padding-bottom:25px;
 }
 
 td{
@@ -58,26 +59,31 @@ table tr:nth-child(even){
 	.logo {
 	   display: inline-block;
 	   height: 100%;
-	   width: 400px;
 	   
-	   background: url('../images/bus_transparent.png') no-repeat left top;
-	   
-	   img {
+	   .ptlogo{
+            position:absolute;
 	       padding: 40px;
+           z-index:3;
 	   }
+       .bus{
+        position:absolute;
+        top:0;
+        left:-50px;
+        height:210px;
+        z-index:0;
+       }
     }
     
     .nav {
         float: right;
-        
         padding-top: 40px;
-        padding-right: 150px;
+        padding-right: 45px;
         
         .nav-item {
             display: inline-block;
             min-width: 100px;
             
-            padding-left: 100px;
+            padding-left: 75px;
             
             .nav-link {
                 .rounded {                    
@@ -139,8 +145,21 @@ table tr:nth-child(even){
     ul {
         height: 100%;
         
-        &.three li {
-            width: 33%;
+        &.three, &.two {
+            width:880px;
+            margin:auto;
+            .center{
+                margin:auto;
+            }
+            .left{
+                text-align:left;
+            }
+            .right{
+                text-align:right;
+            }
+            li{
+                width:33%;
+            }
         }
         &.two li {
             width: 49.5%;
@@ -175,21 +194,52 @@ table tr:nth-child(even){
 }
 
 @media screen and (min-width: 768px) and (max-width:960px){
+.header{
+
+
 	.nav {
-	    padding-right: 45px;
+	    padding-right: 30px;
 	    
 	    .nav-item{
-    	    padding-left: 30px;
+    	    padding-left: 20px;
     	}
 	}
 }
+    .container{
+        width:80%;
+        margin:auto;
+    }
+    .secondary-nav{
+        ul{
+            &.three, &.two{
+                width:80%;
+                margin:auto;
+            }
+            .center{
+                margin:auto;
+            }
+            .left{
+                text-align:center;
+            }
+            .right{
+                text-align:center;
+            }
+        }
+    }
+}
 
-@media screen and (max-width: 767px){
+@media screen and (min-width: 481px) and (max-width: 767px){
 	body{
 		display:none;
 	}
 }
 
+@media screen and (max-width:480px){
+
+}
+
 @import "schedule.less";
+@import "zones.less";
+@import "special.less";
 
 
