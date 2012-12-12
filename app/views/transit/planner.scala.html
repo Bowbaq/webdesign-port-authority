@@ -8,15 +8,31 @@
 }
 
 @main("Trip planner", navbar, "transit") {
-    <form action="http://www.google.com/transit">
-        <input type="hidden" name="ie" value="UTF8">
-        <input type="hidden" name="f" value="d">
-        Start adress <input type="text" style="width:20em" size="20" name="saddr" tabindex="1" maxlength="2048"><br>
-        e.g. 4412 se 17th ave, Portland, OR <!-- Code meeting location, date and time below -->
-        <input type="hidden" name="daddr" value="Burnside St &amp; SW Broadway, Portland, OR">
-        <input type="hidden" name="ttype" value="arr">
-        <input type="hidden" name="date" value="2/13">
-        <input type="hidden" name="time" value="7:30pm"> 
-        <input type="submit" value="Get Directions">
-    </form>
+    <div class="container clearfix">
+        <form class="form-horizontal" action="http://www.google.com/transit">
+          <input type="hidden" name="ie" value="UTF8">
+          <input type="hidden" name="f" value="d">
+          <input type="hidden" name="ttype" value="arr">
+          <div class="control-group">
+            <label class="control-label" for="inputEmail">Start:</label>
+            <div class="controls">
+              <input type="text" size="20" name="saddr" tabindex="1" maxlength="2048" placeholder="Origin">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">Destination:</label>
+            <div class="controls">
+              <input type="text" name="daddr" value="" tabindex="2" maxlength="2048" placeholder="Destination">
+            </div>
+          </div>
+          
+          <input type="hidden" name="date" value="2/13">
+          <input type="hidden" name="time" value="7:30pm">
+          <div class="control-group">
+            <div class="controls">
+              <button type="submit" class="btn">Get Directions</button>
+            </div>
+          </div>
+        </form>
+    </div>
 }

@@ -273,6 +273,11 @@ table tr:nth-child(even) {
                 width:90%;
                 margin:auto;
             }
+            
+            ul.three li {
+                width:32%;
+            }
+            
             .center{
                 margin:auto;
             }
@@ -408,11 +413,15 @@ table tr:nth-child(even) {
 }
 
 @import "schedule.less";
+@media screen and (max-width: 849px){
+    .schedule-page .route-form form #stop-select {
+        padding: 0 0.5em;
+    }
+}
+
 @import "zones.less";
 @import "special.less";
 @import "changes.less";
 @import "bikes.less";
 @import "buy.less";
 @import "detours.less";
-
-
