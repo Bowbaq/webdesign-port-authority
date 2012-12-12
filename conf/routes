@@ -4,37 +4,38 @@
 
 # Home page
 GET     /                                                       controllers.Application.index()
+GET     /transit/trip                                           controllers.Application.planner()
 
 # Schedule AJAX
 GET     /schedule/route/:route_id/direction/:direction/stop/:stop_id    controllers.Application.getSchedule(route_id: String, direction: java.lang.Integer, stop_id: String)
 
 # Re-import data
-# GET     /import                                             controllers.Importer.doImport()
+# GET     /import                                               controllers.Importer.doImport()
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file                                       controllers.Assets.at(path="/public", file)
+GET     /assets/*file                                           controllers.Assets.at(path="/public", file)
 
 # zones
-GET /fares/zones		controllers.Application.zones()
+GET /fares/zones		    controllers.Application.zones()
 
 #map
-#GET /transit/map 		controllers.Application.map()
+#GET /transit/map 		    controllers.Application.map()
 # fares
-GET /fares 	             controllers.Application.fares()
+GET /fares 	                controllers.Application.fares()
 
 # zones
-GET /fares/zones		controllers.Application.zones()
+GET /fares/zones		    controllers.Application.zones()
 
 # where to buy
-GET /fares/buy			controllers.Application.buy()
+GET /fares/buy			    controllers.Application.buy()
 
 # Detours
-GET /info				controllers.Application.info()
+GET /info				    controllers.Application.info()
 
 # Schedule Changes
-GET /info/changes 		controllers.Application.changes()
+GET /info/changes 		    controllers.Application.changes()
 # bikes on transit
-GET /service			controllers.Application.service()
+GET /service			    controllers.Application.service()
 
 # riders with special needs
 GET /service/special_needs		controllers.Application.special()       

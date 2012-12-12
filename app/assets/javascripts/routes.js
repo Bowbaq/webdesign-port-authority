@@ -125,6 +125,7 @@ var Routes = (function(routes) {
       formatted[current].push(time);
     };
     
+    form.find('#schedule').remove();
     form.append(schedule_tpl({ times: formatted }));
     form.addClass('full');
   }

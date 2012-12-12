@@ -21,6 +21,10 @@ public class Application extends Controller {
         return ok(schedule.render(routes));
     }
     
+    public static Result planner(){
+        return ok(planner.render());
+    }
+    
     public static Result getSchedule(String route_id, Integer direction, String stop_id) throws IOException {
         Stop stop = Stop.find.byId(stop_id);
         if(stop == null) {

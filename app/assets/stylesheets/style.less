@@ -62,6 +62,7 @@ table tr:nth-child(even) {
 	.logo {
 	   display: inline-block;
 	   height: 100%;
+	   float: left;
 	   
 	   .ptlogo {
            position: absolute;
@@ -81,7 +82,6 @@ table tr:nth-child(even) {
     .nav {
         float: right;
         padding-top: 40px;
-        padding-right: 45px;
         
         .nav-item {
             display: inline-block;
@@ -143,6 +143,11 @@ table tr:nth-child(even) {
     }
 }
 
+.main-nav {
+    width: 880px;
+    margin: 0 auto;
+}
+
 .secondary-nav {
     height: 40px;
     
@@ -152,7 +157,7 @@ table tr:nth-child(even) {
         height: 100%;
         
         &.three, &.two {
-            width:880px;
+            width: 880px;
             margin:auto;
             .center{
                 margin:auto;
@@ -209,7 +214,7 @@ table tr:nth-child(even) {
 }
 
 #search {
-    width: 403px;
+    width: 386px;
     height: 22px;
 }
 
@@ -225,22 +230,18 @@ table tr:nth-child(even) {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width:960px){
-.header{
-
-
-	.nav {
-	    padding-right: 30px;
-	    
-	    .nav-item{
-    	    padding-left: 20px;
+@media screen and (min-width: 850px) and (max-width:960px){
+    .header{
+    	.nav .nav-item{
+        	padding-left: 20px;
     	}
-	}
-}
-    .container{
+    }
+    
+    .container, .main-nav {
         width:80%;
         margin:auto;
     }
+
     .secondary-nav{
         ul{
             &.three, &.two{
@@ -260,10 +261,12 @@ table tr:nth-child(even) {
     }
 }
 
-@media screen and (max-width: 767px){
-    .container{
-        width:90%;
+@media screen and (max-width: 849px){
+    .container, .main-nav{
+        width: 90%;
+        margin:auto;
     }
+    
     .secondary-nav{
         ul{
             &.three, &.two{
@@ -288,12 +291,12 @@ table tr:nth-child(even) {
                 padding:20px;
                 padding-top: 50px;
             }
+            
             .bus{
                 left:-180px;
             }
         }
         .nav{
-            padding-right: 10px;
             .nav-item{
                 padding-left: 5px;
                 .nav-link{
@@ -325,65 +328,82 @@ table tr:nth-child(even) {
 }
 
 @media screen and (max-width:480px){
+    .main-nav {
+        width: auto;
+    }
+    
     .container{
         width:90%;
         margin:auto;
     }
-.header{
+    
+    .header{
         height:75px;
+        margin: auto;
+        
         .logo{
-            display:inline;
-            margin:auto;
+            display:block;
+            
+            float: none;
+            
             .ptlogo{
+                position: static;
                 padding:0;
-                display:inline;
-                position:static;
+                padding-top: 10px;
+                display:block;
+                margin: auto;
             }
             .bus{
                 display:none;
             }
         }
-    .nav{
-        float:none;
-        position:fixed;
-        bottom:0;
-        background: url('../images/header_texture.png');
-        background-size: auto 50px;
-        padding:0;
-        padding-top: 25px;
-        width:100%;
-        height: 110px;
-        margin:auto;
-        display:block;
-        margin-top: 200px;
-        .nav-item{
-            padding-left:5px;
-            padding-right: 5px;
+            
+        .nav{
+            float:none;
+            position:fixed;
+            bottom:0;
+            background: url('../images/header_texture.png');
+            background-size: auto 50px;
+            padding:0;
+            padding-top: 25px;
+            width:100%;
+            height: 110px;
+            margin:auto;
+            display:block;
+            margin-top: 200px;
+            .nav-item{
+                padding-left:5px;
+                padding-right: 5px;
 
-            &.active:after {
-                content: " ";
-                display: block;
-                width: 0;
-                height: 0;
-                border-top: 25px solid @navOrange;
-                border-left: 25px solid transparent;
-                border-right: 25px solid transparent;
-                border-bottom: 0;
-                position: relative;
-                bottom: 130px;
+                &.active:after {
+                    content: " ";
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    border-top: 15px solid @navOrange;
+                    border-left: 15px solid transparent;
+                    border-right: 15px solid transparent;
+                    border-bottom: 0;
+                    position: relative;
+                    bottom: 130px;
+                    left: 35px;
+                }
             }
         }
     }
-}
-.secondary-nav{
-    position: fixed;
-    bottom:135px;
-    width:100%;
-    font-size:90%;
-}
-.footer{
-    height:200px;
-}
+    .secondary-nav{
+        position: fixed;
+        bottom:135px;
+        width:100%;
+        font-size: 90%;
+        
+        ul.three li {
+            width:32%;
+        }
+    }
+    .footer{
+        height:200px;
+    }
 
 }
 
