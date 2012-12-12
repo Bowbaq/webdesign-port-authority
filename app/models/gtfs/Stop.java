@@ -4,6 +4,8 @@ import com.avaje.ebean.Ebean;
 import com.avaje.ebean.RawSql;
 import com.avaje.ebean.RawSqlBuilder;
 import org.apache.commons.lang3.time.DateUtils;
+import play.Logger;
+import play.cache.Cache;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
@@ -106,19 +108,29 @@ public class Stop extends Model {
     }
 
     public List<StopTime> getDaySchedule(Date day, String route_id, Integer direction) {
-        Route route = Route.find.byId(route_id);
-        List<StopTime> schedule = new ArrayList<StopTime>();
-        if(route == null) {
-            return schedule;
-        }
-
         day = DateUtils.truncate(day, java.util.Calendar.DAY_OF_MONTH);
-        Calendar cal = Calendar.getCurrent(day, route, direction);
+        List<StopTime> schedule = (List<StopTime>) Cache.get(key(day, route_id, direction));
+        if (schedule == null) {
+            Logger.info("Cache miss : " + key(day, route_id, direction));
+            Route route = Route.find.byId(route_id);
+            schedule = new ArrayList<StopTime>();
 
-        if(null != cal) {
-            schedule = StopTime.getTimes(this, cal, day, route, direction);
+            if(route == null) {
+                return schedule;
+            }
+
+            Calendar cal = Calendar.getCurrent(day, route, direction);
+
+            if(null != cal) {
+                schedule = StopTime.getTimes(this, cal, day, route, direction);
+                Cache.set(key(day, route_id, direction), schedule);
+            }
         }
 
         return schedule;
+    }
+
+    private String key(Date day, String route_id, Integer direction) {
+        return "stop_times_" + route_id + "_" + id + "_" + direction + "_" + day.getTime();
     }
 }

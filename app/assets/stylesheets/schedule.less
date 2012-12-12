@@ -3,17 +3,21 @@
         display: inline-block;
         
         .box-sizing(border-box);
+        .user-select(none);
         
-        height: 80px;
+        .border-radius(3px);
+        .box-shadow(2px 2px 5px -1px rgba(0, 0, 0, 0.5));
+        
+        height: 100px;
         min-width: 100px;
         
         margin: 0.2em;
         padding: 1em;
         
-        background: blue;
+        background: #EEE;
         
         &.selected:after {
-            content: " ";
+            content: "";
             display: block;
             width: 0;
             height: 0;
@@ -21,26 +25,35 @@
             
             border-left: 10px solid transparent;
             border-right: 10px solid transparent;
-            border-bottom: 10px solid orange;
+            border-top: 10px solid #999;
             position: relative;
-            bottom: -10px;
+            bottom: -23px;
+        }
+        
+        p:first-child {
+            font-weight: bold;
+            font-size: 200%;
         }
     }
     
     .route-form {
         max-height: 0px;
-        height: 300px;
+        height: 150px;
         
-        margin: 0 0.2em;
+        margin: 1em 0.2em;
+        padding: 1em;
         
         overflow: hidden;
         
         .transition(max-height 0.5s ease-in-out);
         
-        background: orange;
+        background: #EEE;
+        border: 1px solid #999;
          
         &.expanded {
-            max-height: 300px;
+            max-height: 150px;
         }
     }
 }
+
+@import "bus-colors.less";
