@@ -1,0 +1,56 @@
+@navbar = {
+    <!-- The content of the orange sub-nav is defined here for each page -->
+    <ul class="three">
+        <li><a href="@controllers.routes.Application.fares()">Fares</a></li>
+        <li><a href="@controllers.routes.Application.zones()">Zones</a></li>
+        <li class="active"><a href="#">Where to buy</a></li>
+    </ul>
+}
+
+@main("Where to buy", navbar, "fares") {
+
+	<div class="container clearfix vuy-page">
+		<h1>Where to buy</h1><br>
+		
+		<h4>Buy online</h4><br>
+		
+		<p>Purchase monthly passes, ticket books and more in our <a href="#">online store</a>.</p><br>
+		
+		<h4>Port Authority Downtown Service Center</h4><br>
+		
+		<p>Our Downtown Service Center sells passes and tickets, and provides hand schedules and general service information, as well as applications for half-fare cards and Pennsylvania Senior Citizen ID cards.</p><br>
+		
+		<p class="address">Downtown Service Center<br>412-255-1356<br>534 Smithfield Street, Downtown Pittsburgh</p><br>
+
+			<table>
+				<tr><td>Days</td><td>Hours</td></tr>
+				<tr><td>Monday through Friday</td><td>8&#58;00 AM to 5&#58;00 PM</td></tr>
+				<tr><td>Weekends and Holidays</td><td>CLOSED</td></tr>
+			</table><br><br>
+
+		<p>Our Downtown Service Center accepts the following forms of payment:</p><br>
+
+				<ul class="list">
+					<li>Cash</li>
+					<li>Credit cards: MasterCard, Visa, Discover and American Express</li>
+					<li>Debit cards with a MasterCard, Visa, Discover or American Express logo. Please note that these are processed like credit cards without PIN entry. We do not offer cash back from debit transactions.</li>
+					<li>Money orders</li>
+					<li>Corporate checks</li> 
+					<li>Personal checks are only accepted on mail-in orders for annual pass subscriptions. For questions, call 412-255-1356.</li>
+				</ul><br><br>
+		
+		<h4>Customer Service</h4><br>
+				
+		<p>Our Customer Service staff is available for questions, trip planning assistance and to listen to your comments and concerns.</p><br>
+				
+		<p class="address">Customer Service: 412-442-2000; TTY: 412-231-7007<br>Weekdays: 6 a.m. to 7 p.m.<br>Weekends: 8 a.m. to 4:30 p.m.<br>Major holidays: 8 a.m. to 4:30 p.m.<br>You may also contact Customer Service with complaints, questions, comments or to report great service from Port Authority drivers using our Feedback webpage.</p><br>
+				
+		<p>Our Customer Service staff will review your feedback during regular business hours.</p><br>
+		
+		<h4>Other Pass Outlets</h4><br>
+		
+		<p>There are many other locations throughout Allegheny County that sell passes and tickets, including most Giant Eagle stores.</p><br>
+		
+		<p>View a <a href="pass_outlets.pdf">current list</a> of where you can purchase passes and tickets.</p>
+	</div>
+}

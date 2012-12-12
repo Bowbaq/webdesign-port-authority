@@ -3,7 +3,7 @@
 @menubar(active: String) = {
     <ul class="nav clearfix">
 		<li class="nav-item @if(active == "transit"){active}">
-		    <a class="nav-link" href="fares.html">
+		    <a class="nav-link" href="@controllers.routes.Application.index()">
 		        <div class="rounded">
 		            <img src="@routes.Assets.at("images/bus_icon.png")"/>
 		        </div>
@@ -11,7 +11,7 @@
 		    </a>
 		</li>
 		<li class="nav-item @if(active == "fares"){active}">
-		    <a class="nav-link" href="fares.html">
+		    <a class="nav-link" href="@controllers.routes.Application.fares()">
 		        <div class="rounded">
 		            <img src="@routes.Assets.at("images/fares_icon.png")"/>
 		        </div>
@@ -19,7 +19,7 @@
 		    </a>
 		</li>
 		<li class="nav-item @if(active == "info"){active}">
-		    <a class="nav-link" href="fares.html">
+		    <a class="nav-link" href="@controllers.routes.Application.info()">
 		        <div class="rounded">
 		          <img src="@routes.Assets.at("images/info_icon.png")"/>
 		        </div>
@@ -27,7 +27,7 @@
 		    </a>
 		</li>
 		<li class="nav-item @if(active == "service"){active}">
-		    <a class="nav-link" href="fares.html">
+		    <a class="nav-link" href="@controllers.routes.Application.service()">
 		        <div class="rounded">
 		          <img src="@routes.Assets.at("images/service_icon.png")"/>
 		        </div>
