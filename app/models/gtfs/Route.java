@@ -3,15 +3,14 @@ package models.gtfs;
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.SqlQuery;
 import com.avaje.ebean.SqlRow;
+import play.Logger;
 import play.cache.Cache;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @Entity
 public class Route extends Model {
@@ -87,11 +86,34 @@ public class Route extends Model {
                 }
             }
 
-            routes = new ArrayList<Route>(tmp_routes.values());
+            routes = sortAll(new ArrayList<Route>(tmp_routes.values()));
             Cache.set("route_stops", routes);
         }
 
         return routes;
+    }
+
+    private static ArrayList<Route> sortAll(ArrayList<Route> shuffled) {
+        Collections.sort(shuffled, new Comparator<Route>() {
+            @Override
+            public int compare(Route route1, Route route2) {
+                return route1.id.compareTo(route2.id);
+            }
+        });
+        
+        Comparator<Stop> stopcomp = new Comparator<Stop>() {
+            @Override
+            public int compare(Stop stop, Stop stop1) {
+                return stop.name.compareTo(stop1.name);
+            }
+        };
+
+        for(Route route : shuffled) {
+            Collections.sort(route.inbound, stopcomp);
+            Collections.sort(route.outbound, stopcomp);
+        }
+
+        return shuffled;
     }
 
     public List<Stop> inboundStops() {
@@ -101,40 +123,6 @@ public class Route extends Model {
     public List<Stop> outboundStops() {
         return this.outbound;
     }
-
-/*    public List<Stop> stops(Integer direction) {
-        List<Stop> stops = (List<Stop>) Cache.get("route_stops_" + id + "_" + direction);
-        if(stops == null ) {
-            Logger.info("Cache miss : " + "route_stops_" + id + "_" + direction);
-
-            String sql = "SELECT DISTINCT(stop.id), stop.code, stop.name, stop.lat, stop.lng, stop.zone "
-                + "FROM stop JOIN stop_time ON stop.id = stop_time.stop_id JOIN trip ON trip.id = stop_time.trip_id"
-            ;
-
-            RawSql raw = RawSqlBuilder
-                .parse(sql)
-                .columnMapping("DISTINCT(stop.id)", "id")
-                .columnMapping("stop.code", "code")
-                .columnMapping("stop.name", "name")
-                .columnMapping("stop.lat", "lat")
-                .columnMapping("stop.lng", "lng")
-                .columnMapping("stop.zone", "zone")
-                .create()
-            ;
-
-            stops =  Ebean.find(Stop.class)
-                .setRawSql(raw)
-                .where().eq("trip.route_id", id)
-                .where().eq("trip.direction", direction)
-                .order().asc("stop.name")
-                .findList()
-            ;
-
-            Cache.set("route_stops_" + id + "_" + direction, stops);
-        }
-
-        return stops;
-    }*/
     
     public Directions directions() {
         if (null == directions) {
@@ -158,6 +146,11 @@ public class Route extends Model {
     public static Finder<String,Route> find = new Finder<String, Route>(
             String.class, Route.class
     );
+
+    @Override
+    public String toString(){
+        return short_name;
+    }
 
     public class Directions {
         private boolean inbound = false;

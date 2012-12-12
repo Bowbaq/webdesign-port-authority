@@ -1,110 +1,419 @@
 .route {
     // Regular
-    &[data-route-name="1"] p:first-child { color: #A23450; }
-    &[data-route-name="2"] p:first-child { color: #954355; }
-    &[data-route-name="4"] p:first-child { color: #9C0D31; }
-    &[data-route-name="6"] p:first-child { color: #6D1D18; }
-    &[data-route-name="7"] p:first-child { color: #B50A6B; }
-    &[data-route-name="8"] p:first-child { color: #CB576C; }
-    &[data-route-name="11"] p:first-child { color: #B85E3A; }
-    &[data-route-name="12"] p:first-child { color: #B55E82; }
-    &[data-route-name="13"] p:first-child { color: #CB6125; }
-    &[data-route-name="14"] p:first-child { color: #D38053; }
-    &[data-route-name="15"] p:first-child { color: #C85124; }
-    &[data-route-name="16"] p:first-child { color: #98141B; }
-    &[data-route-name="17"] p:first-child { color: #440015; }
-    &[data-route-name="18"] p:first-child { color: #DA999F; }
-    &[data-route-name="19L"] p:first-child { color: #C21622; }
-    &[data-route-name="20"] p:first-child { color: #8E3C19; }
-    &[data-route-name="21"] p:first-child { color: #B14B44; }
-    &[data-route-name="22"] p:first-child { color: #783339; }
-    &[data-route-name="24"] p:first-child { color: #C50085; }
-    &[data-route-name="26"] p:first-child { color: #CE6B5E; }
-    &[data-route-name="27"] p:first-child { color: #CC5882; }
-    &[data-route-name="29"] p:first-child { color: #C171AB; }
-    &[data-route-name="31"] p:first-child { color: #DEA667; }
-    &[data-route-name="36"] p:first-child { color: #E0AC9E; }
-    &[data-route-name="38"] p:first-child { color: #C50969; }
-    &[data-route-name="39"] p:first-child { color: #C9485C; }
-    &[data-route-name="40"] p:first-child { color: #C74430; }
-    &[data-route-name="41"] p:first-child { color: #7F2A10; }
-    &[data-route-name="43"] p:first-child { color: #802740; }
-    &[data-route-name="44"] p:first-child { color: #AB5B65; }
-    &[data-route-name="48"] p:first-child { color: #941F56; }
-    &[data-route-name="51"] p:first-child { color: #950586; }
-    &[data-route-name="51L"] p:first-child { color: #9C549F; }
-    &[data-route-name="52L"] p:first-child { color: #B03C1C; }
-    &[data-route-name="53"] p:first-child { color: #D48741; }
-    &[data-route-name="53L"] p:first-child { color: #B36428; }
-    &[data-route-name="54"] p:first-child { color: #AA2123; }
-    &[data-route-name="56"] p:first-child { color: #B24D87; }
-    &[data-route-name="57"] p:first-child { color: #D582AB; }
-    &[data-route-name="58"] p:first-child { color: #C50085; }
-    &[data-route-name="59"] p:first-child { color: #D99925; }
-    &[data-route-name="60"] p:first-child { color: #A64A16; }
-    &[data-route-name="61A"] p:first-child { color: #A10847; }
-    &[data-route-name="61B"] p:first-child { color: #6B0D5F; }
-    &[data-route-name="61C"] p:first-child { color: #691C37; }
-    &[data-route-name="61D"] p:first-child { color: #8F0786; }
-    &[data-route-name="64"] p:first-child { color: #D49C51; }
-    &[data-route-name="65"] p:first-child { color: #A95E25; }
-    &[data-route-name="67"] p:first-child { color: #984699; }
-    &[data-route-name="68"] p:first-child { color: #C83F5C; }
-    &[data-route-name="69"] p:first-child { color: #925D64; }
-    &[data-route-name="71"] p:first-child { color: #6B1087; }
-    &[data-route-name="71A"] p:first-child { color: #AD7DB5; }
-    &[data-route-name="71B"] p:first-child { color: #AA6A88; }
-    &[data-route-name="71C"] p:first-child { color: #DDA290; }
-    &[data-route-name="71D"] p:first-child { color: #CD674E; }
-    &[data-route-name="74"] p:first-child { color: #A34047; }
-    &[data-route-name="75"] p:first-child { color: #743790; }
-    &[data-route-name="77"] p:first-child { color: #BC7072; }
-    &[data-route-name="78"] p:first-child { color: #B33B54; }
-    &[data-route-name="79"] p:first-child { color: #DA999F; }
-    &[data-route-name="81"] p:first-child { color: #D79325; }
-    &[data-route-name="82"] p:first-child { color: #D48636; }
-    &[data-route-name="83"] p:first-child { color: #A90065; }
-    &[data-route-name="86"] p:first-child { color: #6C145E; }
-    &[data-route-name="87"] p:first-child { color: #810E5D; }
-    &[data-route-name="88"] p:first-child { color: #7F0B86; }
-    &[data-route-name="89"] p:first-child { color: #A54E98; }
-    &[data-route-name="91"] p:first-child { color: #A3524E; }
-    &[data-route-name="93"] p:first-child { color: #C73A43; }
+    &[data-route-name="1"] {
+        &.selected { border-color: #A23450; }
+        p:first-child { color: #A23450; }
+    }
+    &[data-route-name="2"] {
+        &.selected { border-color: #954355; }
+        p:first-child { color: #954355; }
+    }
+    &[data-route-name="4"] {
+        &.selected { border-color: #9C0D31; }
+        p:first-child { color: #9C0D31; }
+    }
+    &[data-route-name="6"] {
+        &.selected { border-color: #6D1D18; }
+        p:first-child { color: #6D1D18; }
+    }
+    &[data-route-name="7"] {
+        &.selected { border-color: #B50A6B; }
+        p:first-child { color: #B50A6B; }
+    }
+    &[data-route-name="8"] {
+        &.selected { border-color: #CB576C; }
+        p:first-child { color: #CB576C; }
+    }
+    &[data-route-name="11"] {
+        &.selected { border-color: #B85E3A; }
+        p:first-child { color: #B85E3A; }
+    }
+    &[data-route-name="12"] {
+        &.selected { border-color: #B55E82; }
+        p:first-child { color: #B55E82; }
+    }
+    &[data-route-name="13"] {
+        &.selected { border-color: #CB6125; }
+        p:first-child { color: #CB6125; }
+    }
+    &[data-route-name="14"] {
+        &.selected { border-color: #D38053; }
+        p:first-child { color: #D38053; }
+    }
+    &[data-route-name="15"] {
+        &.selected { border-color: #C85124; }
+        p:first-child { color: #C85124; }
+    }
+    &[data-route-name="16"] {
+        &.selected { border-color: #98141B; }
+        p:first-child { color: #98141B; }
+    }
+    &[data-route-name="17"] {
+        &.selected { border-color: #440015; }
+        p:first-child { color: #440015; }
+    }
+    &[data-route-name="18"] {
+        &.selected { border-color: #DA999F; }
+        p:first-child { color: #DA999F; }
+    }
+    &[data-route-name="19L"] {
+        &.selected { border-color: #C21622; }
+        p:first-child { color: #C21622; }
+    }
+    &[data-route-name="20"] {
+        &.selected { border-color: #8E3C19; }
+        p:first-child { color: #8E3C19; }
+    }
+    &[data-route-name="21"] {
+        &.selected { border-color: #B14B44; }
+        p:first-child { color: #B14B44; }
+    }
+    &[data-route-name="22"] {
+        &.selected { border-color: #783339; }
+        p:first-child { color: #783339; }
+    }
+    &[data-route-name="24"] {
+        &.selected { border-color: #C50085; }
+        p:first-child { color: #C50085; }
+    }
+    &[data-route-name="26"] {
+        &.selected { border-color: #CE6B5E; }
+        p:first-child { color: #CE6B5E; }
+    }
+    &[data-route-name="27"] {
+        &.selected { border-color: #CC5882; }
+        p:first-child { color: #CC5882; }
+    }
+    &[data-route-name="29"] {
+        &.selected { border-color: #C171AB; }
+        p:first-child { color: #C171AB; }
+    }
+    &[data-route-name="31"] {
+        &.selected { border-color: #DEA667; }
+        p:first-child { color: #DEA667; }
+    }
+    &[data-route-name="36"] {
+        &.selected { border-color: #E0AC9E; }
+        p:first-child { color: #E0AC9E; }
+    }
+    &[data-route-name="38"] {
+        &.selected { border-color: #C50969; }
+        p:first-child { color: #C50969; }
+    }
+    &[data-route-name="39"] {
+        &.selected { border-color: #C9485C; }
+        p:first-child { color: #C9485C; }
+    }
+    &[data-route-name="40"] {
+        &.selected { border-color: #C74430; }
+        p:first-child { color: #C74430; }
+    }
+    &[data-route-name="41"] {
+        &.selected { border-color: #7F2A10; }
+        p:first-child { color: #7F2A10; }
+    }
+    &[data-route-name="43"] {
+        &.selected { border-color: #802740; }
+        p:first-child { color: #802740; }
+    }
+    &[data-route-name="44"] {
+        &.selected { border-color: #AB5B65; }
+        p:first-child { color: #AB5B65; }
+    }
+    &[data-route-name="48"] {
+        &.selected { border-color: #941F56; }
+        p:first-child { color: #941F56; }
+    }
+    &[data-route-name="51"] {
+        &.selected { border-color: #950586; }
+        p:first-child { color: #950586; }
+    }
+    &[data-route-name="51L"] {
+        &.selected { border-color: #9C549F; }
+        p:first-child { color: #9C549F; }
+    }
+    &[data-route-name="52L"] {
+        &.selected { border-color: #B03C1C; }
+        p:first-child { color: #B03C1C; }
+    }
+    &[data-route-name="53"] {
+        &.selected { border-color: #D48741; }
+        p:first-child { color: #D48741; }
+    }
+    &[data-route-name="53L"] {
+        &.selected { border-color: #B36428; }
+        p:first-child { color: #B36428; }
+    }
+    &[data-route-name="54"] {
+        &.selected { border-color: #AA2123; }
+        p:first-child { color: #AA2123; }
+    }
+    &[data-route-name="56"] {
+        &.selected { border-color: #B24D87; }
+        p:first-child { color: #B24D87; }
+    }
+    &[data-route-name="57"] {
+        &.selected { border-color: #D582AB; }
+        p:first-child { color: #D582AB; }
+    }
+    &[data-route-name="58"] {
+        &.selected { border-color: #C50085; }
+        p:first-child { color: #C50085; }
+    }
+    &[data-route-name="59"] {
+        &.selected { border-color: #D99925; }
+        p:first-child { color: #D99925; }
+    }
+    &[data-route-name="60"] {
+        &.selected { border-color: #A64A16; }
+        p:first-child { color: #A64A16; }
+    }
+    &[data-route-name="61A"] {
+        &.selected { border-color: #A10847; }
+        p:first-child { color: #A10847; }
+    }
+    &[data-route-name="61B"] {
+        &.selected { border-color: #6B0D5F; }
+        p:first-child { color: #6B0D5F; }
+    }
+    &[data-route-name="61C"] {
+        &.selected { border-color: #691C37; }
+        p:first-child { color: #691C37; }
+    }
+    &[data-route-name="61D"] {
+        &.selected { border-color: #8F0786; }
+        p:first-child { color: #8F0786; }
+    }
+    &[data-route-name="64"] {
+        &.selected { border-color: #D49C51; }
+        p:first-child { color: #D49C51; }
+    }
+    &[data-route-name="65"] {
+        &.selected { border-color: #A95E25; }
+        p:first-child { color: #A95E25; }
+    }
+    &[data-route-name="67"] {
+        &.selected { border-color: #984699; }
+        p:first-child { color: #984699; }
+    }
+    &[data-route-name="68"] {
+        &.selected { border-color: #C83F5C; }
+        p:first-child { color: #C83F5C; }
+    }
+    &[data-route-name="69"] {
+        &.selected { border-color: #925D64; }
+        p:first-child { color: #925D64; }
+    }
+    &[data-route-name="71"] {
+        &.selected { border-color: #6B1087; }
+        p:first-child { color: #6B1087; }
+    }
+    &[data-route-name="71A"] {
+        &.selected { border-color: #AD7DB5; }
+        p:first-child { color: #AD7DB5; }
+    }
+    &[data-route-name="71B"] {
+        &.selected { border-color: #AA6A88; }
+        p:first-child { color: #AA6A88; }
+    }
+    &[data-route-name="71C"] {
+        &.selected { border-color: #DDA290; }
+        p:first-child { color: #DDA290; }
+    }
+    &[data-route-name="71D"] {
+        &.selected { border-color: #CD674E; }
+        p:first-child { color: #CD674E; }
+    }
+    &[data-route-name="74"] {
+        &.selected { border-color: #A34047; }
+        p:first-child { color: #A34047; }
+    }
+    &[data-route-name="75"] {
+        &.selected { border-color: #743790; }
+        p:first-child { color: #743790; }
+    }
+    &[data-route-name="77"] {
+        &.selected { border-color: #BC7072; }
+        p:first-child { color: #BC7072; }
+    }
+    &[data-route-name="78"] {
+        &.selected { border-color: #B33B54; }
+        p:first-child { color: #B33B54; }
+    }
+    &[data-route-name="79"] {
+        &.selected { border-color: #DA999F; }
+        p:first-child { color: #DA999F; }
+    }
+    &[data-route-name="81"] {
+        &.selected { border-color: #D79325; }
+        p:first-child { color: #D79325; }
+    }
+    &[data-route-name="82"] {
+        &.selected { border-color: #D48636; }
+        p:first-child { color: #D48636; }
+    }
+    &[data-route-name="83"] {
+        &.selected { border-color: #A90065; }
+        p:first-child { color: #A90065; }
+    }
+    &[data-route-name="86"] {
+        &.selected { border-color: #6C145E; }
+        p:first-child { color: #6C145E; }
+    }
+    &[data-route-name="87"] {
+        &.selected { border-color: #810E5D; }
+        p:first-child { color: #810E5D; }
+    }
+    &[data-route-name="88"] {
+        &.selected { border-color: #7F0B86; }
+        p:first-child { color: #7F0B86; }
+    }
+    &[data-route-name="89"] {
+        &.selected { border-color: #A54E98; }
+        p:first-child { color: #A54E98; }
+    }
+    &[data-route-name="91"] {
+        &.selected { border-color: #A3524E; }
+        p:first-child { color: #A3524E; }
+    }
+    &[data-route-name="93"] {
+        &.selected { border-color: #C73A43; }
+        p:first-child { color: #C73A43; }
+    }
 
     // Flyers
-    &[data-route-name="28X"] p:first-child { color: #B9C669; }
-    &[data-route-name="G2"] p:first-child { color: #B4CB7F; }
-    &[data-route-name="G3"] p:first-child { color: #63AC52; }
-    &[data-route-name="G31"] p:first-child { color: #79A837; }
-    &[data-route-name="O1"] p:first-child { color: #53691D; }
-    &[data-route-name="O12"] p:first-child { color: #C8D848; }
-    &[data-route-name="O5"] p:first-child { color: #92B783; }
-    &[data-route-name="P1"] p:first-child { color: #BABF31; }
-    &[data-route-name="P10"] p:first-child { color: #8BA747; }
-    &[data-route-name="P12"] p:first-child { color: #99A74E; }
-    &[data-route-name="P13"] p:first-child { color: #6E905C; }
-    &[data-route-name="P16"] p:first-child { color: #A2C035; }
-    &[data-route-name="P17"] p:first-child { color: #CCD681; }
-    &[data-route-name="P2"] p:first-child { color: #5A714F; }
-    &[data-route-name="P3"] p:first-child { color: #0C5C20; }
-    &[data-route-name="P67"] p:first-child { color: #72B141; }
-    &[data-route-name="P68"] p:first-child { color: #364A0A; }
-    &[data-route-name="P69"] p:first-child { color: #528E36; }
-    &[data-route-name="P7"] p:first-child { color: #3DA147; }
-    &[data-route-name="P71"] p:first-child { color: #406338; }
-    &[data-route-name="P76"] p:first-child { color: #91BE3C; }
-    &[data-route-name="P78"] p:first-child { color: #68812B; }
-    &[data-route-name="Y1"] p:first-child { color: #24702D; }
-    &[data-route-name="Y45"] p:first-child { color: #59872B; }
-    &[data-route-name="Y46"] p:first-child { color: #A8CA65; }
-    &[data-route-name="Y47"] p:first-child { color: #7AB440; }
-    &[data-route-name="Y49"] p:first-child { color: #C8DA6D; }
+    &[data-route-name="28X"] {
+        &.selected { border-color: #B9C669; }
+        p:first-child { color: #B9C669; }
+    }
+    &[data-route-name="G2"] {
+        &.selected { border-color: #B4CB7F; }
+        p:first-child { color: #B4CB7F; }
+    }
+    &[data-route-name="G3"] {
+        &.selected { border-color: #63AC52; }
+        p:first-child { color: #63AC52; }
+    }
+    &[data-route-name="G31"] {
+        &.selected { border-color: #79A837; }
+        p:first-child { color: #79A837; }
+    }
+    &[data-route-name="O1"] {
+        &.selected { border-color: #53691D; }
+        p:first-child { color: #53691D; }
+    }
+    &[data-route-name="O12"] {
+        &.selected { border-color: #C8D848; }
+        p:first-child { color: #C8D848; }
+    }
+    &[data-route-name="O5"] {
+        &.selected { border-color: #92B783; }
+        p:first-child { color: #92B783; }
+    }
+    &[data-route-name="P1"] {
+        &.selected { border-color: #BABF31; }
+        p:first-child { color: #BABF31; }
+    }
+    &[data-route-name="P10"] {
+        &.selected { border-color: #8BA747; }
+        p:first-child { color: #8BA747; }
+    }
+    &[data-route-name="P12"] {
+        &.selected { border-color: #99A74E; }
+        p:first-child { color: #99A74E; }
+    }
+    &[data-route-name="P13"] {
+        &.selected { border-color: #6E905C; }
+        p:first-child { color: #6E905C; }
+    }
+    &[data-route-name="P16"] {
+        &.selected { border-color: #A2C035; }
+        p:first-child { color: #A2C035; }
+    }
+    &[data-route-name="P17"] {
+        &.selected { border-color: #CCD681; }
+        p:first-child { color: #CCD681; }
+    }
+    &[data-route-name="P2"] {
+        &.selected { border-color: #5A714F; }
+        p:first-child { color: #5A714F; }
+    }
+    &[data-route-name="P3"] {
+        &.selected { border-color: #0C5C20; }
+        p:first-child { color: #0C5C20; }
+    }
+    &[data-route-name="P67"] {
+        &.selected { border-color: #72B141; }
+        p:first-child { color: #72B141; }
+    }
+    &[data-route-name="P68"] {
+        &.selected { border-color: #364A0A; }
+        p:first-child { color: #364A0A; }
+    }
+    &[data-route-name="P69"] {
+        &.selected { border-color: #528E36; }
+        p:first-child { color: #528E36; }
+    }
+    &[data-route-name="P7"] {
+        &.selected { border-color: #3DA147; }
+        p:first-child { color: #3DA147; }
+    }
+    &[data-route-name="P71"] {
+        &.selected { border-color: #406338; }
+        p:first-child { color: #406338; }
+    }
+    &[data-route-name="P76"] {
+        &.selected { border-color: #91BE3C; }
+        p:first-child { color: #91BE3C; }
+    }
+    &[data-route-name="P78"] {
+        &.selected { border-color: #68812B; }
+        p:first-child { color: #68812B; }
+    }
+    &[data-route-name="Y1"] {
+        &.selected { border-color: #24702D; }
+        p:first-child { color: #24702D; }
+    }
+    &[data-route-name="Y45"] {
+        &.selected { border-color: #59872B; }
+        p:first-child { color: #59872B; }
+    }
+    &[data-route-name="Y46"] {
+        &.selected { border-color: #A8CA65; }
+        p:first-child { color: #A8CA65; }
+    }
+    &[data-route-name="Y47"] {
+        &.selected { border-color: #7AB440; }
+        p:first-child { color: #7AB440; }
+    }
+    &[data-route-name="Y49"] {
+        &.selected { border-color: #C8DA6D; }
+        p:first-child { color: #C8DA6D; }
+    }
 
     // T / Incline
-    &[data-route-name="RED"] p:first-child { color: #363996; }
-    &[data-route-name="BLLB"] p:first-child { color: #89B1D2; }
-    &[data-route-name="BLSV"] p:first-child { color: #07A0E1; }
-    &[data-route-name="DQI"] p:first-child { color: #2475BE; }
-    &[data-route-name="MI"] p:first-child { color: #225596; }
-    &[data-route-name="SL"] p:first-child { color: #7394B0; }
+    &[data-route-name="RED"] {
+        &.selected { border-color: #363996; }
+        p:first-child { color: #363996; }
+    }
+    &[data-route-name="BLLB"] {
+        &.selected { border-color: #89B1D2; }
+        p:first-child { color: #89B1D2; }
+    }
+    &[data-route-name="BLSV"] {
+        &.selected { border-color: #07A0E1; }
+        p:first-child { color: #07A0E1; }
+    }
+    &[data-route-name="DQI"] {
+        &.selected { border-color: #2475BE; }
+        p:first-child { color: #2475BE; }
+    }
+    &[data-route-name="MI"] {
+        &.selected { border-color: #225596; }
+        p:first-child { color: #225596; }
+    }
+    &[data-route-name="SL"] {
+        &.selected { border-color: #7394B0; }
+        p:first-child { color: #7394B0; }
+    }
 }

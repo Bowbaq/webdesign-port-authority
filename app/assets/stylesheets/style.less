@@ -5,7 +5,6 @@
 @navBlue: #00AAB5;
 
 body {
-    font-family: ;
     font: 18px 'Source Sans Pro', sans-serif;
     background: #EEE;
 }
@@ -19,6 +18,12 @@ h1, h2, h3, h4, h5, h6 {
 	color: @navBlue;
 }
 
+h1 {
+    font-size: 150%;
+    padding-top: 35px;
+    padding-bottom: 25px;
+}
+
 span {
 	font-style:italic;
 }
@@ -27,12 +32,6 @@ span {
     width: 880px;
     margin:auto;
     font-size:90%;
-}
-
-h1 {
-    font-size: 150%;
-    padding-top:35px;
-    padding-bottom:25px;
 }
 
 td{
@@ -61,17 +60,18 @@ table tr:nth-child(even){
 	   display: inline-block;
 	   height: 100%;
 	   
-	   .ptlogo{
-            position:absolute;
+	   .ptlogo {
+           position: absolute;
 	       padding: 40px;
-           z-index:3;
+           z-index: 3;
 	   }
-       .bus{
-        position:absolute;
-        top:0;
-        left:-50px;
-        height:210px;
-        z-index:0;
+	   
+       .bus {
+            position: absolute;
+            top: 0;
+            left: -50px;
+            height: 210px;
+            z-index: 0;
        }
     }
     
@@ -87,6 +87,8 @@ table tr:nth-child(even){
             padding-left: 75px;
             
             .nav-link {
+                .user-select(none);
+                
                 .rounded {                    
                     width:76px;
                     height:76px;
@@ -194,15 +196,29 @@ table tr:nth-child(even){
     visibility: hidden;
 }
 
-#clear {
-    position: relative;
-    top: -2px;
+#route-search {
+    span.btn-inverse {
+        position: relative;
+        top: -1px;
+        height: 23px;
+        padding: 4px 7px;
+    }
+}
+
+#search {
+    width: 403px;
+    height: 22px;
 }
 
 #quick-select {
+    margin-bottom: 1.2em;
+    
     .btn {
         padding-top: 0.3em;
         padding-bottom: 0.3em;
+        font-size: 18px;
+        
+        .border-radius(4px);
     }
 }
 

@@ -16,42 +16,118 @@
     .route {
         display: inline-block;
         
-        height: 100px;
+        height: 82px;
         min-width: 100px;
         
-        .box();
+        border: 3px solid transparent;
         
-        &.selected:after {
-            content: "";
-            display: block;
-            width: 0;
-            height: 0;
-            margin: 0 auto;
-            
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #999;
-            position: relative;
-            bottom: -23px;
-        }
+        .box();
+        padding: 0em 1em;
         
         p:first-child {
             font-weight: bold;
             font-size: 200%;
         }
+        
+        &.selected {
+            border: 3px solid #440015;
+        }
     }
     
     .route-form {
+        height: 92px;
         max-height: 0px;
-        height: 150px;
         
         .box();
+        padding: 0;
+                        
         .transition(max-height 0.5s ease-in-out);
         
         overflow: hidden;
          
         &.expanded {
-            max-height: 150px;
+            max-height: 92px;
+            
+            &.full {
+                height: auto;
+                max-height: 700px;
+            }
+        }
+        
+        form {
+            margin: 1em;
+            
+            div {
+                float: left;
+            }
+            
+            #direction {
+                width: 150px;
+                
+                .radio {
+                    padding-left: 0;
+                    
+                    cursor: pointer;
+                    
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+                
+                input[type="radio"] {
+                    opacity: 0;
+                    
+                    &+ span {
+                        font-size: 18px;
+                        font-style: normal;
+                        
+                        background: url('../images/radio_background.png') no-repeat;
+                        background-position: 0px 3px;
+                        background-size: 20px;
+
+                        padding-left: 25px;
+                        
+                        i {
+                            margin-top: 5px;
+                            margin-right: 5px;
+                        }
+                    }
+                    
+                    &:checked + span {
+                        background-position: 0px -18px;
+                    }
+                }
+            }
+            
+            #stop-select {
+                padding: 0 2em;
+                
+                select {
+                    position: relative;
+                    top: 3px;
+                    
+                    height: 45px;
+                    width: 400px;
+                }
+            }
+            
+            #go input {
+                position: relative;
+                height: 45px;
+                top: 3px;
+            }
+        }
+        
+        #schedule {
+            tr td:first-child {
+                font-weight: bold;
+                background: white;
+            }
+            
+            span {
+                font-style: normal;
+                padding: 0 0.6em;
+            }
         }
     }
 }

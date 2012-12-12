@@ -59,6 +59,7 @@ var Routes = (function(routes) {
     hideForm(function(){
       // Fill the new form with the template
       form = $(from_tpl({}));
+      form.attr('data-route-name', $this.attr('data-route-name'));
 
       // Find the last element of the line 
       lastOfLine($this).after(form);
@@ -68,8 +69,8 @@ var Routes = (function(routes) {
       $this.on('click.hide', preHideForm);
       
       var $radio = form.find('[name="direction"]');
-      var $select = $radio.nextAll('select[name="stop"]');
-      var $go = $radio.nextAll('input[type="submit"]');
+      var $select = form.find('select[name="stop"]');
+      var $go = form.find('input[type="submit"]');
 
       $radio.on('click.direction', function(){
         if($(this).val() == 1) {
@@ -81,7 +82,7 @@ var Routes = (function(routes) {
         $go.removeAttr('disabled');
       });
       
-      form.find('input[type="submit"]').on('click', function(e){
+      $go.on('click', function(e){
         e.preventDefault();
         
         showSchedule(
@@ -98,7 +99,6 @@ var Routes = (function(routes) {
   };
   
   function showSchedule(route_id, direction, stop_id) {
-    console.log(route_id, direction, stop_id);
     $.ajax({
       type: 'GET',
       url: 'http://' + window.location.host + '/schedule/route/' + route_id + '/direction/' + direction + '/stop/' + stop_id,
@@ -108,7 +108,25 @@ var Routes = (function(routes) {
   }
   
   function onReceiveSchedule(data){
-    form.append(schedule_tpl({ times: JSON.parse(data) }));
+    var formatted = {};
+    var current = '';
+    
+    data = JSON.parse(data);
+    
+    for (var i = 0; i < data.length; i++) {
+      var time = data[i];
+      var hour = time.substring(0, 2) + ':00 ' + time.substring(6, 9);
+      
+      if(current !== hour) {
+        current = hour;
+        formatted[current] = [];
+      }
+      
+      formatted[current].push(time);
+    };
+    
+    form.append(schedule_tpl({ times: formatted }));
+    form.addClass('full');
   }
   
   function onFetchScheduleError() {
@@ -165,11 +183,6 @@ var Routes = (function(routes) {
     
     $('#search').keyup(function(){
       filterRoutes(filterSearch);
-    });
-    
-    $('#clear').on('click', function(){
-      $search.val('');
-      filterRoutes(function(){ return true; });
     });
   };
   
