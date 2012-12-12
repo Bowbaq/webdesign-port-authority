@@ -144,7 +144,7 @@ var Routes = (function(routes) {
   
   function filterSearch(name, long_name) {
     var search = $search.val();
-    return _.contains(name, search) || _.contains(long_name, search);
+    return _.contains(name.toLowerCase(), search.toLowerCase()) || _.contains(long_name.toLowerCase(), search.toLowerCase());
   }
   
   routes.hook = function hook() {

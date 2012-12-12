@@ -107,6 +107,7 @@ public class Stop extends Model {
         return schedule;
     }
 
+    @SuppressWarnings("unchecked")
     public List<StopTime> getDaySchedule(Date day, String route_id, Integer direction) {
         day = DateUtils.truncate(day, java.util.Calendar.DAY_OF_MONTH);
         List<StopTime> schedule = (List<StopTime>) Cache.get(key(day, route_id, direction));

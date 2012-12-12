@@ -18,30 +18,37 @@
     <h1>Schedule planner</h1>
     
     <form id="route-search">
-        <input type="text" name="search" value="" id="search" placeholder="Route name (Aiport Flyer) or number (28X)">
-        <button id="clear">Clear</button>
+        <div class="input-append">
+          <input type="text" name="search" value="" id="search" placeholder="Route name (Aiport Flyer) or number (28X)">
+          <button class="btn btn-inverse" id="clear" type="button">Clear</button>
+        </div>
     </form>
     <div id="quick-select">
-        <button id="all">All</button>
-        <button id="regular">Regular Routes</button>
-        <button id="flyer">Flyer</button>
-        <button id="special">T / Incline</button>
+        <a href="#" class="btn btn-large btn-inverse" id="all">All</a>
+        <a href="#" class="btn btn-large btn-inverse" id="regular">Regular Routes</a>
+        <a href="#" class="btn btn-large btn-inverse" id="flyer">Flyer</a>
+        <a href="#" class="btn btn-large btn-inverse" id="special">T / Incline</a>
     </div>
     <div id="routes">
     @for(route <- routes) {
         <div class="route" data-route-name="@route.short_name" data-route-long-name="@route.long_name" data-route-id="@route.id">
             <p>@route.short_name</p>
             <p>@route.long_name</p>
+            @if(route.directions.inbound()) {
             <script type="text/template" class="inbound">
-            @for(stop <- route.stops(Trip.INBOUND)) {
+                @for(stop <- route.inboundStops()) {
                 <option value="@stop.id">@stop.name</option>
-            }
+                }
             </script>
+            }
+
+            @if(route.directions.outbound()) {
             <script type="text/template" class="outbound">
-            @for(stop <- route.stops(Trip.OUTBOUND)) {
+                @for(stop <- route.outboundStops()) {
                 <option value="@stop.id">@stop.name</option>
-            }
+                }
             </script>
+            }
         </div>
     }
     </div>

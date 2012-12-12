@@ -17,7 +17,7 @@ import java.util.List;
 public class Application extends Controller {
     
     public static Result index() {
-        List<Route> routes = Route.find.all();
+        List<Route> routes = Route.getAllWithStops();
         return ok(schedule.render(routes));
     }
     
