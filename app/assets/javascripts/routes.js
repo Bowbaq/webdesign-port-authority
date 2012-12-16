@@ -113,6 +113,13 @@ var Routes = (function(routes) {
     
     data = JSON.parse(data);
     
+    if(data.length == 0) {
+      form.find('#schedule').remove();
+      form.append('<p class="no-more">No buses today</p>');
+      form.addClass('full');
+      return;
+    }
+    
     for (var i = 0; i < data.length; i++) {
       var time = data[i];
       var hour = time.substring(0, 2) + ':00 ' + time.substring(6, 9);

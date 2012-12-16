@@ -81,7 +81,13 @@
 <script type="text/template" id="route-schedule">
     <div id="schedule">
     <table>
-        <% _.forEach(times, function(values, time) { %> <tr><td><%= time %></td><td><% _.forEach(values, function(schedule) { %> <span><%= schedule %></span> <% }) %></td></tr><% }); %>
+        <% _.forEach(times, function(values) { %> 
+            <tr><td>
+                <% _.forEach(values, function(schedule) { %> 
+                    <span><%= schedule %></span>
+                <% }) %>
+            </td></tr>
+        <% }); %>
     </table>
     </div>
 </script>
