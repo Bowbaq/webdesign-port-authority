@@ -9,25 +9,44 @@
 
 @main("Trip planner", navbar, "transit") {
     <div class="container clearfix">
-        <form class="form-horizontal" action="http://www.google.com/transit">
+        <form id="trip-planner" action="http://www.google.com/transit">
+          <p><span>This is still very much a prototype, and as such hasn't received much design attention (but it should work)</span></p>
           <input type="hidden" name="ie" value="UTF8">
           <input type="hidden" name="f" value="d">
-          <input type="hidden" name="ttype" value="arr">
-          <div class="control-group">
-            <label class="control-label" for="inputEmail">Start:</label>
-            <div class="controls">
-              <input type="text" size="20" name="saddr" tabindex="1" maxlength="2048" placeholder="Origin">
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="inputPassword">Destination:</label>
-            <div class="controls">
-              <input type="text" name="daddr" value="" tabindex="2" maxlength="2048" placeholder="Destination">
-            </div>
-          </div>
           
-          <input type="hidden" name="date" value="2/13">
-          <input type="hidden" name="time" value="7:30pm">
+          <div class="control-group">
+            <label class="control-label" for="saddr">Origin:</label>
+            <div class="controls">
+              <input type="text" size="20" name="saddr" id="saddr" tabindex="1" maxlength="2048" placeholder="5000 Forbes Av., Pittsburgh">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="daddr">Destination:</label>
+            <div class="controls">
+              <input type="text" name="daddr" id="daddr" value="" tabindex="2" maxlength="2048" placeholder="Downtown, Pittsburgh">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="date">Date:</label>
+            <div class="controls">
+              <input type="date" name="date" id="date" value="">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="time">Time:</label>
+            <div class="controls">
+              <input type="time" name="time" id="time" value="">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls">
+                <select name="nwhen" id="nwhen" tabindex="5">
+                    <option value="now">Leave now</option>
+                    <option value="dep">Depart at</option>
+                    <option value="arr">Arrive by</option>
+                </select>
+            </div>
+          </div>
           <div class="control-group">
             <div class="controls">
               <button type="submit" class="btn">Get Directions</button>
