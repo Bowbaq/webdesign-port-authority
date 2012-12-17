@@ -332,7 +332,8 @@ table tr:nth-child(even) {
                         }
                     }
                 }
-                    &.active:after {
+                    
+                &.active:after {
                     content: " ";
                     display: block;
                     width: 0;
@@ -343,12 +344,9 @@ table tr:nth-child(even) {
                     position: relative;
                     bottom: -42px;
                     right: -24px;
-                    }
+                }
             }
         }
-    }
-    .footer{
-        width: 90%;
     }
 }
 
@@ -362,28 +360,79 @@ table tr:nth-child(even) {
         margin: auto;
     }
     
-    .header{
+    .header {
         height: 75px;
         margin: auto;
         
-        .logo{
+        .logo {
             display: block;
             
             float: none;
             
-            .ptlogo{
+            .ptlogo {
                 position: static;
-                padding:0;
-                padding-top: 10px;
                 display:block;
+                
+                
+                padding: 0;
+                padding-top: 10px;
                 margin: auto;
             }
-            .bus{
+            
+            .bus {
                 display:none;
             }
         }
+        
+        .nav {
+            position: fixed;
+            bottom: 0;
             
-        .nav{
+            width: 100%;
+            height: 45px;
+            
+            margin: 0;
+            padding: 5px 0;
+            
+            background: url('../images/header_texture.png');
+            
+            z-index: 10000;
+            
+            .nav-item {
+                width: 24%;
+                min-width: 0;
+                
+                padding: 0;
+                
+                .nav-link .rounded {
+                    width: 25px;
+                    height: 25px;
+                    
+                    img {
+                        width: 15px;
+                        height: 15px;
+                        
+                        margin-top: 5px;
+                    }
+                }
+                
+                &.active a .rounded, a:hover .rounded {                    
+                    border: 2px solid @navBlue;
+                    .box-shadow(0 0 5px 0 rgba(255, 255, 255, 0.75));
+                }
+                
+                .nav-link p {
+                    margin-top: 3px;
+                    font-size: 55%;
+                }
+            }
+        }
+    }
+        
+        
+        
+            
+/*        .nav {
             float: none;
             position: fixed;
             bottom: 0;
@@ -415,26 +464,30 @@ table tr:nth-child(even) {
                 }
             }
         }
-    }
+    }*/
+    
     .secondary-nav{
         position: fixed;
-        bottom:135px;
+        bottom: 55px;
+        
         width:100%;
-        font-size: 90%;
+        height: 25px;
+        
+        font-size: 70%;
+        
+        z-index: 10000;
         
         ul.three li {
-            width:32%;
+            width: 32%;
+        }
+        
+        li a {
+            padding: 5px 0 0 0;
         }
     }
-    .copy{
-        display:none;
-    }
+    
     .footer{
-        height:200px;
-        width:100%;
-        border:0;
-        padding: 0;
-        margin:0;
+        height:75px;
     }
 
 }
