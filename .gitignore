@@ -21,3 +21,5 @@ dist
 /mockup.bmml
 /data
 /data.sql
+
+.DS_Store
